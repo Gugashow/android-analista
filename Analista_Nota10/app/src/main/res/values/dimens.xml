@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="sizeTitulo">25sp</dimen>
+    <dimen name="sizePadrao">20sp</dimen>
+    <dimen name="caixaWidth">250dp</dimen>
+    <dimen name="caixaHeight">30dp</dimen>
+    <dimen name="paddingLeftRight">10dp</dimen>
+</resources>
