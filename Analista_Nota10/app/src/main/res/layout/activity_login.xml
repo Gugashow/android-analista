@@ -110,6 +110,7 @@
         android:id="@+id/botaoCadastrarId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="linkCadastrar"
         android:text="Cadastre-se"
         android:textColor="@color/colorTitulo"
         android:textSize="@dimen/sizePadrao"
