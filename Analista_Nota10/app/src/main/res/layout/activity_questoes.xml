@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#6481D5"
-    tools:context=".Questoes">
+    tools:context=".Controller.QuestoesController">
 
     <Button
         android:id="@+id/botaoAnteriorSimulado"

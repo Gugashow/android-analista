@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1C7723"
-    tools:context=".Cadastro">
+    tools:context=".Controller.CadastroController">
 
     <Button
         android:id="@+id/botaoFinalizarCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorTitulo"
+        android:onClick="createAccount"
         android:text=">"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
@@ -35,7 +36,7 @@
         app:srcCompat="@drawable/analistaoriginal" />
 
     <EditText
-        android:id="@+id/emailCadastroCaixaTexto"
+        android:id="@+id/emailUser"
         android:layout_width="@dimen/caixaWidth"
         android:layout_height="@dimen/caixaHeight"
         android:background="#FFFFFF"
@@ -53,7 +54,7 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <EditText
-        android:id="@+id/confSenhaCadastroCaixaTexto"
+        android:id="@+id/confirmpassUser"
         android:layout_width="@dimen/caixaWidth"
         android:layout_height="@dimen/caixaHeight"
         android:background="#FFFFFF"
@@ -71,7 +72,7 @@
         app:layout_constraintVertical_bias="0.703" />
 
     <EditText
-        android:id="@+id/usuarioCadastroCaixaTexto"
+        android:id="@+id/nameUser"
         android:layout_width="@dimen/caixaWidth"
         android:layout_height="@dimen/caixaHeight"
         android:background="#FFFFFF"
@@ -103,7 +104,7 @@
         app:layout_constraintVertical_bias="0.295" />
 
     <EditText
-        android:id="@+id/senhaCadastroCaixaTexto"
+        android:id="@+id/passUser"
         android:layout_width="@dimen/caixaWidth"
         android:layout_height="@dimen/caixaHeight"
         android:background="#FFFFFF"

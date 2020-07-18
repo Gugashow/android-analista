@@ -1,14 +1,16 @@
-package com.example.analista_nota10;
+package com.example.analista_nota10.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Simulado extends AppCompatActivity {
+import com.example.analista_nota10.R;
+
+public class QuestoesController extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_simulado);
+        setContentView(R.layout.activity_questoes);
     }
 }

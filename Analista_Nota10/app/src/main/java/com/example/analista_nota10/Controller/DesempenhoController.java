@@ -1,10 +1,12 @@
-package com.example.analista_nota10;
+package com.example.analista_nota10.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Desempenho extends AppCompatActivity {
+import com.example.analista_nota10.R;
+
+public class DesempenhoController extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

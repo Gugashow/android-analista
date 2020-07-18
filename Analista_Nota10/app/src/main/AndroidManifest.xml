@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Desempenho"></activity>
-        <activity android:name=".Questoes" />
-        <activity android:name=".Simulado" />
-        <activity android:name=".Cadastro" />
-        <activity android:name=".Login">
+        <activity android:name=".Controller.DesempenhoController"></activity>
+        <activity android:name=".Controller.QuestoesController" />
+        <activity android:name=".Controller.SimuladoController" />
+        <activity android:name=".Controller.CadastroController" />
+        <activity android:name=".Controller.LoginController">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
