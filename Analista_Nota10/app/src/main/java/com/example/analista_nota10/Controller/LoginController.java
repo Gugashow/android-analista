@@ -29,18 +29,18 @@ public class LoginController extends AppCompatActivity {
         String nameUser = name.getText().toString();
         String passUser = password.getText().toString();
 
-        String resultado = service.login(nameUser, passUser);
+        String erro = service.login(nameUser, passUser);
 
-        if(resultado.equals("Ok")){
-            Intent SimuladoController = new Intent(this, SimuladoController.class);
+        if(erro.isEmpty()){
+            Intent SimuladoController = new Intent(this, MenuController.class);
             startActivity(SimuladoController);
         }else{
-            Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), erro, Toast.LENGTH_LONG).show();
         }
     }
 
     public void linkCadastrar (View view){
-        Intent CadastroController = new Intent(this, CadastroController.class);
+        Intent CadastroController = new Intent(this, RegisterController.class);
         startActivity(CadastroController);
     }
 }

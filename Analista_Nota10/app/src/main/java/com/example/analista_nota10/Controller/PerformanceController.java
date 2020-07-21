@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.analista_nota10.R;
 
-public class DesempenhoController extends AppCompatActivity {
+public class PerformanceController extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_desempenho);
+        setContentView(R.layout.activity_performance);
     }
 }

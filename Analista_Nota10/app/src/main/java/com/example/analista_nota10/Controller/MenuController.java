@@ -8,15 +8,15 @@ import android.view.View;
 
 import com.example.analista_nota10.R;
 
-public class SimuladoController extends AppCompatActivity {
+public class MenuController extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_simulado);
+        setContentView(R.layout.activity_menu);
     }
     public void buttonDisciplina (View view){
-        Intent DisciplinaController = new Intent(this, DisciplinaController.class);
+        Intent DisciplinaController = new Intent(this, DisciplineController.class);
         startActivity(DisciplinaController);
     }
     public void buttonQuestao (View view){

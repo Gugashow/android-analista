@@ -9,17 +9,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.analista_nota10.R;
-import com.example.analista_nota10.Service.CadastroService;
+import com.example.analista_nota10.Service.RegisterService;
 
-public class CadastroController extends AppCompatActivity {
+public class RegisterController extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro);
+        setContentView(R.layout.activity_register);
     }
         public void createAccount(View view){
-            CadastroService service = new CadastroService(getBaseContext());
+            RegisterService service = new RegisterService(getBaseContext());
 
 
             TextView name = (TextView)findViewById(R.id.nameUser);

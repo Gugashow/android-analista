@@ -28,39 +28,12 @@ public class Banco extends SQLiteOpenHelper{
         super(context, NOME_BANCO,null,VERSAO);
     }
 
-    /*@RequiresApi(api = Build.VERSION_CODES.O)
-
-    public void onCreate (){
-
-        try {
-            String sql = new String(Files.readAllBytes(Paths.get("src/main/java/com/example/analista_nota10/initialize.sql")), StandardCharsets.UTF_8);
-
-            for (String line: sql.split(";")) {
-
-                db.execSQL(line);
-            }
-
-        }catch (IOException erro){
-            erro.printStackTrace();
-        }
-
-    }*/
-
     @Override
-    public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE "+TABELA+"("
-                + ID + " integer primary key autoincrement,"
-                + NOME + " text,"
-                + EMAIL + " text,"
-                + SENHA + " text"
-                +")";
-        db.execSQL(sql);
-    }
+    public void onCreate(SQLiteDatabase db) {}
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS tbUsuario");
+        db.execSQL("DROP TABLE IF EXISTS " + TABELA);
         onCreate(db);
-
     }
 }
