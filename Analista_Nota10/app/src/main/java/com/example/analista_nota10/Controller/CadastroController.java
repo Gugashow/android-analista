@@ -2,7 +2,9 @@ package com.example.analista_nota10.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +18,7 @@ public class CadastroController extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
     }
-        public void createAccount(){
+        public void createAccount(View view){
             CadastroService service = new CadastroService(getBaseContext());
 
 
@@ -32,10 +34,14 @@ public class CadastroController extends AppCompatActivity {
 
             if(!passUser.equals(passUserConfirm)){
                 Toast.makeText(getApplicationContext(), "As senhas devem ser iguais", Toast.LENGTH_LONG).show();
+                return ;
             }
 
             String resultado = service.createAccount(nameUser, emailUser, passUser);
 
             Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+
+            Intent LoginController = new Intent(this, LoginController.class);
+            startActivity(LoginController);
     }
 }
