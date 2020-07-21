@@ -139,7 +139,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorTitulo"
-        android:onClick="login"
+        android:onClick="buttonLogin"
         android:text="Acessar"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
