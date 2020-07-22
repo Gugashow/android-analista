@@ -17,7 +17,6 @@ public class LoginService {
 
     public String login(String nome, String senha) {
         Cursor cursor;
-        String error = "";
 
         db = banco.getWritableDatabase();
 
@@ -27,15 +26,15 @@ public class LoginService {
         if (cursor != null) {
             if (!cursor.getString(cursor.getColumnIndexOrThrow(Banco.NOME)).equals(nome)
                     && !cursor.getString(cursor.getColumnIndexOrThrow(Banco.SENHA)).equals(senha)) {
-                error = "Usuario ou senha incorreta";
+                return  "Usuario ou senha incorreta";
             }
 
             if (!cursor.getString(cursor.getColumnIndexOrThrow(Banco.SENHA)).equals(senha)) {
-                error = "Senha incorreta";
+                return  "Senha incorreta";
             }
         }
 
-        return error;
+        return "";
     }
 
     public Cursor lerDado(String nome){
