@@ -8,10 +8,11 @@
     tools:context=".Controller.PerformanceController">
 
     <Button
-        android:id="@+id/botaoAcessarId6"
+        android:id="@+id/buttonPrincipal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#379F3F"
+        android:onClick="buttonPrincipal"
         android:text="Principal"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
@@ -23,14 +24,55 @@
         app:layout_constraintVertical_bias="0.971" />
 
     <ImageView
-        android:id="@+id/imageView5"
         android:layout_width="138dp"
         android:layout_height="114dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073"
+        app:layout_constraintVertical_bias="0.063"
         app:srcCompat="@drawable/analistaoriginal" />
+
+    <TextView
+        android:id="@+id/porcentagemPerformance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="70%"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.414" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desempenho"
+        android:textColor="#4EBC57"
+        android:textSize="@dimen/sizeTitulo"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.286" />
+
+    <TextView
+        android:id="@+id/acertosPerformance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Acertou: 14/20"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/sizePadrao"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,26 +7,72 @@
     android:background="#6481D5"
     tools:context=".Controller.SimuladoController">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
-        android:layout_marginBottom="111dp"
-        android:text="Simulado"
-        android:textColor="#000000"
-        android:textSize="@dimen/sizeTitulo"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/addDisciplina"
+    <RadioGroup
+        android:layout_width="337dp"
+        android:layout_height="255dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.787">
+
+        <RadioButton
+            android:id="@+id/capturarAlternativaA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A" />
+
+        <TextView
+            android:id="@+id/mostrarRespostaA"
+            android:layout_width="@dimen/caixaAddRespostaWidth"
+            android:layout_height="@dimen/caixaAddRespostaHeight"
+            android:background="#FDFDFD" />
+
+        <RadioButton
+            android:id="@+id/capturarAlternativaB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="B" />
+
+        <TextView
+            android:id="@+id/mostrarRespostaB"
+            android:layout_width="@dimen/caixaAddRespostaWidth"
+            android:layout_height="@dimen/caixaAddRespostaHeight"
+            android:background="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/capturarAlternativaC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="C" />
+
+        <TextView
+            android:id="@+id/mostrarRespostaC"
+            android:layout_width="@dimen/caixaAddRespostaWidth"
+            android:layout_height="@dimen/caixaAddRespostaHeight"
+            android:background="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/capturarAlternativaD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="D" />
+
+        <TextView
+            android:id="@+id/mostrarRespostaD"
+            android:layout_width="@dimen/caixaAddRespostaWidth"
+            android:layout_height="@dimen/caixaAddRespostaHeight"
+            android:background="#FFFFFF" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/buttonBeforeSimulado"
         android:layout_width="108dp"
         android:layout_height="39dp"
         android:background="#FFFFFF"
+        android:onClick="buttonBeforeSimulado"
         android:paddingLeft="@dimen/paddingLeftRight"
         android:paddingRight="@dimen/paddingLeftRight"
         android:text="Anterior"
@@ -44,6 +90,7 @@
         android:layout_width="102dp"
         android:layout_height="37dp"
         android:background="#FFFFFF"
+        android:onClick="buttonAfterSimulado"
         android:paddingLeft="@dimen/paddingLeftRight"
         android:paddingRight="@dimen/paddingLeftRight"
         android:text="Avançar"
@@ -66,5 +113,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.032"
         app:srcCompat="@drawable/analistaazul" />
+
+    <TextView
+        android:id="@+id/mostrarPergunta"
+        android:layout_width="@dimen/caixaDePerguntaWidth"
+        android:layout_height="@dimen/caixaDePerguntaHeight"
+        android:background="#FFFCFC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.286" />
+
+    <Button
+        android:id="@+id/buttonSair"
+        android:layout_width="@dimen/buttonSairWidth"
+        android:layout_height="@dimen/buttonSairHeight"
+        android:onClick="buttonSair"
+        android:text="SAIR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

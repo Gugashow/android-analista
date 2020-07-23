@@ -32,8 +32,8 @@ public class LoginController extends AppCompatActivity {
         String erro = service.login(nameUser, passUser);
 
         if(erro.isEmpty()){
-            Intent SimuladoController = new Intent(this, MenuController.class);
-            startActivity(SimuladoController);
+            Intent Menu = new Intent(this, MenuController.class);
+            startActivity(Menu);
         }else{
             Toast.makeText(getApplicationContext(), erro, Toast.LENGTH_LONG).show();
         }

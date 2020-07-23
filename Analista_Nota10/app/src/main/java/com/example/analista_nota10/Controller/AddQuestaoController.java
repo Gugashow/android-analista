@@ -13,7 +13,7 @@ import com.example.analista_nota10.R;
 public class AddQuestaoController extends AppCompatActivity {
 
     RadioButton radioAlternativaA, radioAlternativaB, radioAlternativaC, radioAlternativaD;
-    EditText textRespostaA, textRespostaB, textRespostaC, textRespostaD;
+    EditText escreverRespostaA, escreverRespostaB, escreverRespostaC, escreverRespostaD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +27,10 @@ public class AddQuestaoController extends AppCompatActivity {
         radioAlternativaC = findViewById(R.id.radioAlternativaC);
         radioAlternativaD = findViewById(R.id.radioAlternativaD);
 
-        textRespostaA = findViewById(R.id.textRespostaA);
-        textRespostaB = findViewById(R.id.textRespostaB);
-        textRespostaC = findViewById(R.id.textRespostaC);
-        textRespostaD = findViewById(R.id.textRespostaD);
+        escreverRespostaA = findViewById(R.id.escreverRespostaA);
+        escreverRespostaB = findViewById(R.id.escreverRespostaB);
+        escreverRespostaC = findViewById(R.id.escreverRespostaC);
+        escreverRespostaD = findViewById(R.id.escreverRespostaD);
 
         if (radioAlternativaA.isChecked()){
             Toast.makeText(this, "Alternativa correta A", Toast.LENGTH_LONG).show();

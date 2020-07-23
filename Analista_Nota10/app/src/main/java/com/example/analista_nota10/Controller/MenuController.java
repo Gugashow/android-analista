@@ -23,4 +23,8 @@ public class MenuController extends AppCompatActivity {
         Intent QuestaoController = new Intent(this, AddQuestaoController.class);
         startActivity(QuestaoController);
     }
+    public void buttonGerarSimulado (View view){
+        Intent SimuladoController = new Intent(this, SimuladoController.class);
+        startActivity(SimuladoController);
+    }
 }

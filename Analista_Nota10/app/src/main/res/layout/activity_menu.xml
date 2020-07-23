@@ -49,6 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
+        android:onClick="buttonGerarSimulado"
         android:paddingLeft="@dimen/paddingLeftRight"
         android:paddingRight="@dimen/paddingLeftRight"
         android:text="Gerar Simulado"

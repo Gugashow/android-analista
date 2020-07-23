@@ -8,7 +8,7 @@
     tools:context=".Controller.AddQuestaoController">
 
     <EditText
-        android:id="@+id/textPergunta"
+        android:id="@+id/escreverPergunta"
         android:layout_width="339dp"
         android:layout_height="122dp"
         android:background="#FFFFFF"
@@ -96,7 +96,7 @@
             android:text="A" />
 
         <EditText
-            android:id="@+id/textRespostaA"
+            android:id="@+id/escreverRespostaA"
             android:layout_width="@dimen/caixaAddRespostaWidth"
             android:layout_height="@dimen/caixaAddRespostaHeight"
             android:background="#FFFFFF"
@@ -112,7 +112,7 @@
             android:text="B" />
 
         <EditText
-            android:id="@+id/textRespostaB"
+            android:id="@+id/escreverRespostaB"
             android:layout_width="@dimen/caixaAddRespostaWidth"
             android:layout_height="@dimen/caixaAddRespostaHeight"
             android:background="#FFFFFF"
@@ -128,7 +128,7 @@
             android:text="C" />
 
         <EditText
-            android:id="@+id/textRespostaC"
+            android:id="@+id/escreverRespostaC"
             android:layout_width="@dimen/caixaAddRespostaWidth"
             android:layout_height="@dimen/caixaAddRespostaHeight"
             android:background="#FFFFFF"
@@ -144,7 +144,7 @@
             android:text="D" />
 
         <EditText
-            android:id="@+id/textRespostaD"
+            android:id="@+id/escreverRespostaD"
             android:layout_width="@dimen/caixaAddRespostaWidth"
             android:layout_height="@dimen/caixaAddRespostaHeight"
             android:background="#FFFFFF"

@@ -7,4 +7,8 @@
     <dimen name="paddingLeftRight">10dp</dimen>
     <dimen name="caixaAddRespostaWidth">337dp</dimen>
     <dimen name="caixaAddRespostaHeight">31dp</dimen>
+    <dimen name="caixaDePerguntaWidth">339dp</dimen>
+    <dimen name="caixaDePerguntaHeight">122dp</dimen>
+    <dimen name="buttonSairWidth">54dp</dimen>
+    <dimen name="buttonSairHeight">38dp</dimen>
 </resources>

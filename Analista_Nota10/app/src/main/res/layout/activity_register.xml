@@ -7,6 +7,40 @@
     android:background="#1C7723"
     tools:context=".Controller.RegisterController">
 
+    <EditText
+        android:id="@+id/passUser"
+        android:layout_width="@dimen/caixaWidth"
+        android:layout_height="@dimen/caixaHeight"
+        android:layout_marginBottom="232dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:paddingLeft="@dimen/paddingLeftRight"
+        android:paddingRight="@dimen/paddingLeftRight"
+        android:textColorHint="@color/colorTitulo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/confirmpassUser"
+        android:layout_width="@dimen/caixaWidth"
+        android:layout_height="@dimen/caixaHeight"
+        android:layout_marginBottom="176dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="Confirmar senha"
+        android:inputType="textPassword"
+        android:paddingLeft="@dimen/paddingLeftRight"
+        android:paddingRight="@dimen/paddingLeftRight"
+        android:textColorHint="@color/colorTitulo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/botaoFinalizarCadastro"
         android:layout_width="wrap_content"
@@ -36,42 +70,6 @@
         app:srcCompat="@drawable/analistaoriginal" />
 
     <EditText
-        android:id="@+id/emailUser"
-        android:layout_width="@dimen/caixaWidth"
-        android:layout_height="@dimen/caixaHeight"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:hint="E-mail"
-        android:inputType="textPersonName"
-        android:paddingLeft="@dimen/paddingLeftRight"
-        android:paddingRight="@dimen/paddingLeftRight"
-        android:textColorHint="@color/colorTitulo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
-
-    <EditText
-        android:id="@+id/confirmpassUser"
-        android:layout_width="@dimen/caixaWidth"
-        android:layout_height="@dimen/caixaHeight"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:hint="Confirmar senha"
-        android:inputType="textPersonName"
-        android:paddingLeft="@dimen/paddingLeftRight"
-        android:paddingRight="@dimen/paddingLeftRight"
-        android:textColorHint="@color/colorTitulo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.703" />
-
-    <EditText
         android:id="@+id/nameUser"
         android:layout_width="@dimen/caixaWidth"
         android:layout_height="@dimen/caixaHeight"
@@ -90,6 +88,7 @@
         app:layout_constraintVertical_bias="0.401" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Analist@_Nota10"
@@ -104,13 +103,13 @@
         app:layout_constraintVertical_bias="0.295" />
 
     <EditText
-        android:id="@+id/passUser"
+        android:id="@+id/emailUser"
         android:layout_width="@dimen/caixaWidth"
         android:layout_height="@dimen/caixaHeight"
         android:background="#FFFFFF"
         android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPersonName"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
         android:paddingLeft="@dimen/paddingLeftRight"
         android:paddingRight="@dimen/paddingLeftRight"
         android:textColorHint="@color/colorTitulo"
@@ -119,6 +118,6 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.605" />
+        app:layout_constraintVertical_bias="0.499" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
