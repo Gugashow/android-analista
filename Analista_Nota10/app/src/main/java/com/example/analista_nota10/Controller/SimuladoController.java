@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.analista_nota10.R;
 
-public class QuestoesController extends AppCompatActivity {
+public class SimuladoController extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_questoes);
+        setContentView(R.layout.activity_simulado);
     }
 }

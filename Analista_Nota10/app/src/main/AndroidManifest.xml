@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controller.QuestaoController"></activity>
-        <activity android:name=".Controller.DisciplineController" />
+        <activity android:name=".Controller.AddQuestaoController"></activity>
+        <activity android:name=".Controller.AddDisciplineController" />
         <activity android:name=".Controller.PerformanceController" />
-        <activity android:name=".Controller.QuestoesController" />
+        <activity android:name=".Controller.SimuladoController" />
         <activity android:name=".Controller.MenuController" />
         <activity android:name=".Controller.RegisterController" />
         <activity android:name=".Controller.LoginController">

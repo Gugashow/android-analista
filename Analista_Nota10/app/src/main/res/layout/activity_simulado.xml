@@ -5,12 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#6481D5"
-    tools:context=".Controller.QuestoesController">
+    tools:context=".Controller.SimuladoController">
 
-    <Button
-        android:id="@+id/botaoAnteriorSimulado"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:layout_marginBottom="111dp"
+        android:text="Simulado"
+        android:textColor="#000000"
+        android:textSize="@dimen/sizeTitulo"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/addDisciplina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonBeforeSimulado"
+        android:layout_width="108dp"
+        android:layout_height="39dp"
         android:background="#FFFFFF"
         android:paddingLeft="@dimen/paddingLeftRight"
         android:paddingRight="@dimen/paddingLeftRight"
@@ -25,13 +40,13 @@
         app:layout_constraintVertical_bias="0.969" />
 
     <Button
-        android:id="@+id/botaoAvancarSimulado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/buttonAfterSimulado"
+        android:layout_width="102dp"
+        android:layout_height="37dp"
         android:background="#FFFFFF"
         android:paddingLeft="@dimen/paddingLeftRight"
         android:paddingRight="@dimen/paddingLeftRight"
-        android:text="Anterior"
+        android:text="Avançar"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,9 +61,10 @@
         android:layout_height="114dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073"
+        app:layout_constraintVertical_bias="0.032"
         app:srcCompat="@drawable/analistaazul" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,11 +16,11 @@ public class MenuController extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
     }
     public void buttonDisciplina (View view){
-        Intent DisciplinaController = new Intent(this, DisciplineController.class);
+        Intent DisciplinaController = new Intent(this, AddDisciplineController.class);
         startActivity(DisciplinaController);
     }
     public void buttonQuestao (View view){
-        Intent QuestaoController = new Intent(this, QuestaoController.class);
+        Intent QuestaoController = new Intent(this, AddQuestaoController.class);
         startActivity(QuestaoController);
     }
 }
