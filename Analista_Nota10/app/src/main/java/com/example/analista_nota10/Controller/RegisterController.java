@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.analista_nota10.Model.Login;
 import com.example.analista_nota10.R;
 import com.example.analista_nota10.Service.RegisterService;
 
@@ -20,28 +21,37 @@ public class RegisterController extends AppCompatActivity {
     }
         public void createAccount(View view){
             RegisterService service = new RegisterService(getBaseContext());
-
+            Login login = new Login();
 
             TextView name = (TextView)findViewById(R.id.nameUser);
             TextView password = (TextView)findViewById((R.id.passUser));
             TextView passwordConfirm = (TextView)findViewById((R.id.confirmpassUser));
             TextView email = (TextView)findViewById((R.id.emailUser));
 
-            String nameUser = name.getText().toString();
-            String emailUser = email.getText().toString();
-            String passUser = password.getText().toString();
+            login.setNameUser(name.getText().toString());
+            login.setEmail(email.getText().toString());
+            login.setPasswordUser(password.getText().toString());
             String passUserConfirm = passwordConfirm.getText().toString();
 
-            if(!passUser.equals(passUserConfirm)){
+            // Check fields
+            if(login.getNameUser().isEmpty() || login.getEmail().isEmpty() || login.getPasswordUser().isEmpty() || passUserConfirm.isEmpty()){
+                Toast.makeText(getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_LONG).show();
+                return;
+            }
+
+            // Check password
+            if(!login.getPasswordUser().equals(passUserConfirm)){
                 Toast.makeText(getApplicationContext(), "As senhas devem ser iguais", Toast.LENGTH_LONG).show();
                 return ;
             }
 
-            String resultado = service.createAccount(nameUser, emailUser, passUser);
+            // Creating a account
+            String resultado = service.createAccount(login);
 
             Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
-
-            Intent LoginController = new Intent(this, LoginController.class);
-            startActivity(LoginController);
+            if(!resultado.equals("Registro já existe")) {
+                Intent LoginController = new Intent(this, LoginController.class);
+                startActivity(LoginController);
+            }
     }
 }

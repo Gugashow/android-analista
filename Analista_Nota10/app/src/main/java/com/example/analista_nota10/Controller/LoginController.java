@@ -8,8 +8,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.analista_nota10.Model.Login;
 import com.example.analista_nota10.R;
 import com.example.analista_nota10.Service.LoginService;
+import com.example.analista_nota10.Singleton;
 
 public class LoginController extends AppCompatActivity {
 
@@ -22,14 +24,16 @@ public class LoginController extends AppCompatActivity {
 
     public void buttonLogin(View view){
         LoginService service = new LoginService(getBaseContext());
+        Login login = new Login();
 
 
         TextView name = (TextView)findViewById(R.id.nameUser);
         TextView password = (TextView)findViewById((R.id.passUser));
-        String nameUser = name.getText().toString();
-        String passUser = password.getText().toString();
+        login.setNameUser(name.getText().toString());
+        login.setPasswordUser(password.getText().toString());
 
-        String erro = service.login(nameUser, passUser);
+        Singleton.getInstance().login = login;
+        String erro = service.login(login);
 
         if(erro.isEmpty()){
             Intent Menu = new Intent(this, MenuController.class);

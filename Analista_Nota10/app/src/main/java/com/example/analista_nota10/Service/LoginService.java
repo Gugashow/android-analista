@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.analista_nota10.DataBase.Banco;
+import com.example.analista_nota10.Model.Login;
 
 public class LoginService {
     private SQLiteDatabase db;
@@ -15,21 +16,21 @@ public class LoginService {
         banco = new Banco(context);
     }
 
-    public String login(String nome, String senha) {
+    public String login(Login login) {
         Cursor cursor;
 
         db = banco.getWritableDatabase();
 
         //Verificar se usuario existe
-        cursor = lerDado(nome);
+        cursor = lerDado(login.getNameUser());
 
         if (cursor != null) {
-            if (!cursor.getString(cursor.getColumnIndexOrThrow(Banco.NOME)).equals(nome)
-                    && !cursor.getString(cursor.getColumnIndexOrThrow(Banco.SENHA)).equals(senha)) {
-                return  "Usuario ou senha incorreta";
+            if (!cursor.getString(cursor.getColumnIndexOrThrow(Banco.NOME)).equals(login.getNameUser())
+                    && !cursor.getString(cursor.getColumnIndexOrThrow(Banco.SENHA)).equals(login.getPasswordUser())) {
+                return  "Usuario ou senha incorreta" + login.getNameUser() + login.getPasswordUser();
             }
 
-            if (!cursor.getString(cursor.getColumnIndexOrThrow(Banco.SENHA)).equals(senha)) {
+            if (!cursor.getString(cursor.getColumnIndexOrThrow(Banco.SENHA)).equals(login.getPasswordUser())) {
                 return  "Senha incorreta";
             }
         }
