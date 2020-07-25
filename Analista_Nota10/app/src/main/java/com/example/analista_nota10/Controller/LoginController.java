@@ -29,8 +29,14 @@ public class LoginController extends AppCompatActivity {
 
         TextView name = (TextView)findViewById(R.id.nameUser);
         TextView password = (TextView)findViewById((R.id.passUser));
+
         login.setNameUser(name.getText().toString());
         login.setPasswordUser(password.getText().toString());
+
+        if(login.getNameUser().isEmpty() || login.getPasswordUser().isEmpty()){
+            Toast.makeText(getApplicationContext(), "Preencha ambos os campos", Toast.LENGTH_LONG).show();
+            return;
+        }
 
         Singleton.getInstance().login = login;
         String erro = service.login(login);
