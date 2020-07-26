@@ -30,9 +30,12 @@ public class RegisterService {
       ContentValues valores;
       long resultado;
 
-       db = banco.getWritableDatabase();
+       db = banco.getReadableDatabase();
 
-       onCreate();
+       if(!banco.tableExists(db, TABELA)){
+           onCreate();
+       }
+       db.close();
 
        if(getUserByName(login.getNameUser()) != null) return "Registro já existe";
 
@@ -74,7 +77,7 @@ public class RegisterService {
     }
 
     /**
-     * TODO
+     * Creating users table
      */
     public void onCreate() {
         String sql = " CREATE TABLE IF NOT EXISTS "+TABELA+"("

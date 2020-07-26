@@ -19,18 +19,19 @@ public class LoginService {
     public String login(Login login) {
         Cursor cursor;
 
-        db = banco.getWritableDatabase();
+        //db = banco.getWritableDatabase();
+
+        //long result = db.delete("tbDisciplina", null, null);
 
         //Verificar se usuario existe
-        cursor = lerDado(login.getNameUser());
-
-        if (cursor != null) {
-            if (!cursor.getString(cursor.getColumnIndexOrThrow(Banco.NOME)).equals(login.getNameUser())
-                    && !cursor.getString(cursor.getColumnIndexOrThrow(Banco.SENHA)).equals(login.getPasswordUser())) {
+        Login user = lerDado(login.getNameUser());
+        if(user != null){
+            if (!user.getNameUser().equals(login.getNameUser())
+                    && !user.getPasswordUser().equals(login.getPasswordUser())) {
                 return  "Usuario ou senha incorreta" + login.getNameUser() + login.getPasswordUser();
             }
 
-            if (!cursor.getString(cursor.getColumnIndexOrThrow(Banco.SENHA)).equals(login.getPasswordUser())) {
+            if (!user.getPasswordUser().equals(login.getPasswordUser())) {
                 return  "Senha incorreta";
             }
         }
@@ -38,18 +39,31 @@ public class LoginService {
         return "";
     }
 
-    public Cursor lerDado(String nome){
+    public Login lerDado(String name){
         Cursor cursor;
         db = banco.getReadableDatabase();
-        String[] campos = {Banco.ID, Banco.NOME, Banco.EMAIL, Banco.SENHA};
-        cursor = db.query(Banco.TABELA, campos,null, null, null, null, null, null);
+        cursor = db.query(Banco.TABELA, null,null, null, null, null, null, null);
 
-        if (cursor != null) {
+        if (cursor.getCount() > 0) {
             cursor.moveToFirst();
-        }
 
+            while(!cursor.isAfterLast()){
+                Login login = new Login(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3));
+
+                if(login.getNameUser().equals(name)){
+                    db.close();
+                    return login;
+                }
+                cursor.moveToNext();
+            }
+
+        }
         db.close();
-        return cursor;
+        return null;
 
     }
 }

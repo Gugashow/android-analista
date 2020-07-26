@@ -114,7 +114,7 @@ public class DisciplineService {
 
 
     /**
-     * Creating users table
+     * Creating disciplines table
      */
     public void onCreate() {
         String tableUser = RegisterService.TABELA;

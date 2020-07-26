@@ -1,14 +1,22 @@
 package com.example.analista_nota10.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.analista_nota10.Model.Discipline;
 import com.example.analista_nota10.R;
+import com.example.analista_nota10.Service.DisciplineService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AddQuestaoController extends AppCompatActivity {
 
@@ -44,5 +52,10 @@ public class AddQuestaoController extends AppCompatActivity {
         if (radioAlternativaD.isChecked()){
             Toast.makeText(this, "Alternativa correta D", Toast.LENGTH_LONG).show();
         }
+
+        DisciplineService service = new DisciplineService(getApplicationContext());
+
+        List<Discipline> listDisciplines = service.listDiscipline();
+
     }
 }
