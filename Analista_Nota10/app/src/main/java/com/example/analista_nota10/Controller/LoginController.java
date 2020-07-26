@@ -39,13 +39,13 @@ public class LoginController extends AppCompatActivity {
         }
 
         Singleton.getInstance().login = login;
-        String erro = service.login(login);
+        String result = service.login(login);
 
-        if(erro.isEmpty()){
+        if(result.isEmpty()){
             Intent Menu = new Intent(this, MenuController.class);
             startActivity(Menu);
         }else{
-            Toast.makeText(getApplicationContext(), erro, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
         }
     }
 

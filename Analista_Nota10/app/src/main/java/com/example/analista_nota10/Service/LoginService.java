@@ -34,9 +34,11 @@ public class LoginService {
             if (!user.getPasswordUser().equals(login.getPasswordUser())) {
                 return  "Senha incorreta";
             }
+
+            return "";
         }
 
-        return "";
+        return "Usuário não cadastrado";
     }
 
     public Login lerDado(String name){

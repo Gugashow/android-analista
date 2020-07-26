@@ -46,6 +46,8 @@ public class AddDisciplineController extends AppCompatActivity {
             String result = service.createDiscipline(discipline, login);
 
             // TODO clean textview
+            nameDiscipline.setText("");
+            nameDiscipline.requestFocus();
             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
         }
     }

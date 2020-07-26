@@ -39,6 +39,8 @@ public class RegisterService {
 
        if(getUserByName(login.getNameUser()) != null) return "Registro já existe";
 
+       //
+       db = banco.getWritableDatabase();
        valores = new ContentValues();
        valores.put(NOME_USUARIO, login.getNameUser());
        valores.put(EMAIL, login.getEmail());
