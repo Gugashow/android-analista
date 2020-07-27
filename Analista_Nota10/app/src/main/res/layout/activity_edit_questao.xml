@@ -4,11 +4,130 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D3D3D3"
-    tools:context=".Controller.AddQuestaoController">
+    android:background="#959090"
+    tools:context=".Controller.EditQuestao">
+
+    <Spinner
+        android:id="@+id/spinnerEditQuestao"
+        android:layout_width="216dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.138" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginRight="116dp"
+        android:layout_marginBottom="111dp"
+        android:text="Editar Questões"
+        android:textColor="#000000"
+        android:textSize="@dimen/sizeTitulo"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/addDisciplina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonProntoQuestao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorButton"
+        android:text="Pronto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.232"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.971" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="331dp"
+        android:layout_height="269dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.787">
+
+        <RadioButton
+            android:id="@+id/radioEditAlternativaA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A" />
+
+        <EditText
+            android:id="@+id/editRespostaA"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingLeft="@dimen/paddingLeftRight"
+            android:paddingRight="@dimen/paddingLeftRight" />
+
+        <RadioButton
+            android:id="@+id/radioEditAlternativaB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="B" />
+
+        <EditText
+            android:id="@+id/editRespostaB"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingLeft="@dimen/paddingLeftRight"
+            android:paddingRight="@dimen/paddingLeftRight" />
+
+        <RadioButton
+            android:id="@+id/radioEditAlternativaC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="C" />
+
+        <EditText
+            android:id="@+id/editRespostaC"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingLeft="@dimen/paddingLeftRight"
+            android:paddingRight="@dimen/paddingLeftRight" />
+
+        <RadioButton
+            android:id="@+id/radioEditAlternativaD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="D" />
+
+        <EditText
+            android:id="@+id/editRespostaD"
+            android:layout_width="@dimen/caixaAddRespostaWidth"
+            android:layout_height="@dimen/caixaAddRespostaHeight"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingLeft="@dimen/paddingLeftRight"
+            android:paddingRight="@dimen/paddingLeftRight" />
+
+    </RadioGroup>
 
     <EditText
-        android:id="@+id/escreverPergunta"
+        android:id="@+id/editPergunta"
         android:layout_width="339dp"
         android:layout_height="122dp"
         android:background="#FFFFFF"
@@ -23,138 +142,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.282" />
 
-    <Spinner
-        android:id="@+id/spinnerOpcoes"
-        android:layout_width="313dp"
-        android:layout_height="46dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:entries="@array/spinner_opcoes"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143" />
-
-    <TextView
-        android:id="@+id/textView5"
+    <Button
+        android:id="@+id/buttonExcluirQuestao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginRight="156dp"
-        android:layout_marginBottom="111dp"
-        android:text="Questões"
-        android:textColor="#000000"
-        android:textSize="@dimen/sizeTitulo"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/addDisciplina"
+        android:background="@color/colorButton"
+        android:text="Excluir"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.971" />
 
     <Button
-        android:id="@+id/buttonAddQuestao"
+        android:id="@+id/buttonCarregarQuestao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:background="@color/colorButton"
-        android:onClick="buttonAddQuestao"
-        android:text="Adicionar"
+        android:text="Carregar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <RadioGroup
-        android:layout_width="337dp"
-        android:layout_height="255dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintHorizontal_bias="0.866"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.787">
-
-        <RadioButton
-            android:id="@+id/radioAlternativaA"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="A" />
-
-        <EditText
-            android:id="@+id/escreverRespostaA"
-            android:layout_width="@dimen/caixaAddRespostaWidth"
-            android:layout_height="@dimen/caixaAddRespostaHeight"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:paddingLeft="@dimen/paddingLeftRight"
-            android:paddingRight="@dimen/paddingLeftRight" />
-
-        <RadioButton
-            android:id="@+id/radioAlternativaB"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="B" />
-
-        <EditText
-            android:id="@+id/escreverRespostaB"
-            android:layout_width="@dimen/caixaAddRespostaWidth"
-            android:layout_height="@dimen/caixaAddRespostaHeight"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:paddingLeft="@dimen/paddingLeftRight"
-            android:paddingRight="@dimen/paddingLeftRight" />
-
-        <RadioButton
-            android:id="@+id/radioAlternativaC"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="C" />
-
-        <EditText
-            android:id="@+id/escreverRespostaC"
-            android:layout_width="@dimen/caixaAddRespostaWidth"
-            android:layout_height="@dimen/caixaAddRespostaHeight"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:paddingLeft="@dimen/paddingLeftRight"
-            android:paddingRight="@dimen/paddingLeftRight" />
-
-        <RadioButton
-            android:id="@+id/radioAlternativaD"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="D" />
-
-        <EditText
-            android:id="@+id/escreverRespostaD"
-            android:layout_width="@dimen/caixaAddRespostaWidth"
-            android:layout_height="@dimen/caixaAddRespostaHeight"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:paddingLeft="@dimen/paddingLeftRight"
-            android:paddingRight="@dimen/paddingLeftRight" />
-
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/buttonEditQuestao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="216dp"
-        android:layout_marginLeft="216dp"
-        android:background="@color/colorButton"
-        android:onClick="buttonEditQuestao"
-        android:text="Editar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.839"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028" />
-
+        app:layout_constraintVertical_bias="0.138" />
 </androidx.constraintlayout.widget.ConstraintLayout>

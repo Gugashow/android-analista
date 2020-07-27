@@ -2,10 +2,13 @@ package com.example.analista_nota10.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,12 +27,15 @@ public class AddDisciplineController extends AppCompatActivity {
         setContentView(R.layout.activity_add_discipline_controller);
     }
 
+    TextView nameDiscipline;
+
     public void addDiscipline(View view) {
         DisciplineService service = new DisciplineService(getBaseContext());
         RegisterService serviceUser = new RegisterService(getBaseContext());
 
 
-        TextView nameDiscipline = (TextView) findViewById(R.id.addDisciplina);
+        nameDiscipline = (TextView) findViewById(R.id.addDisciplina);
+
         if (nameDiscipline.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Preencha o campo", Toast.LENGTH_LONG).show();
         } else {
@@ -46,11 +52,27 @@ public class AddDisciplineController extends AppCompatActivity {
             String result = service.createDiscipline(discipline, login);
 
             // Cleaning field
-            nameDiscipline.setText("");
-            nameDiscipline.requestFocus();
+            clearComponent();
 
+            // Abrir o teclado
+            ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE))
+                    .showSoftInput(nameDiscipline, 0);
+            
             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void buttonAddEditar (View view){
+
+        Spinner spinnerSelectDiscipline = findViewById(R.id.spinnerSelectDiscipline);
+
+        Intent EditDiscipline = new Intent(this, EditDiscipline.class);
+        startActivity(EditDiscipline);
+    }
+
+    private void clearComponent() {
+        nameDiscipline.setText("");
+        nameDiscipline.requestFocus();
     }
 
 }

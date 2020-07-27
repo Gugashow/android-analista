@@ -3,8 +3,10 @@ package com.example.analista_nota10.Controller;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Adapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -57,5 +59,9 @@ public class AddQuestaoController extends AppCompatActivity {
 
         List<Discipline> listDisciplines = service.listDiscipline();
 
+    }
+    public void buttonEditQuestao (View view){
+        Intent EditQuestao = new Intent(this, EditQuestao.class);
+        startActivity(EditQuestao);
     }
 }
