@@ -54,4 +54,5 @@ public class RegisterController extends AppCompatActivity {
                 startActivity(LoginController);
             }
     }
+    // gustavo é lindo
 }
