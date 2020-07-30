@@ -112,6 +112,38 @@ public class DisciplineService {
         return listDiscipline;
     }
 
+    /**
+     * Get discipline
+     * @return discipline
+     */
+    public Discipline  getDisciplineByName(String name){
+        Cursor cursor;
+
+        // Reading data in the bank
+        db = banco.getReadableDatabase();
+        cursor = db.query(TABELA, null, null,null, null, null, null);
+
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+
+            while(!cursor.isAfterLast()){
+                Discipline discipline = new Discipline(
+                        cursor.getInt(0),
+                        cursor.getInt(1),
+                        cursor.getString(2));
+
+                if(discipline.getNameDiscipline().equals(name)){
+                    db.close();
+                    return discipline;
+                }
+                cursor.moveToNext();
+            }
+        }
+
+        db.close();
+        return null;
+    }
+
 
     /**
      * Creating disciplines table
@@ -126,7 +158,7 @@ public class DisciplineService {
                 + ID_DISCIPLINA + " integer primary key autoincrement,"
                 + ID_USUARIO + " integer,"
                 + NOME_DISCIPLINA + " text,"
-                + "foreign key (" + ID_USUARIO + ") references " + tableUser  + " (" + ID_USUARIO + ")"
+                + "foreign key (" + ID_USUARIO + ") references " + tableUser  + " (" + ID_USUARIO + ") ON DELETE CASCADE"
                 +")";
         db.execSQL(sql);
         db.close();

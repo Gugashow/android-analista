@@ -1,35 +1,33 @@
 package com.example.analista_nota10.Controller;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.analista_nota10.Model.Login;
 import com.example.analista_nota10.R;
 import com.example.analista_nota10.Service.LoginService;
 import com.example.analista_nota10.Singleton;
 
-public class LoginController extends AppCompatActivity {
-    public static final String ADMIN = "Admin";
-    private TextView name, password;
+public class LoginAdmController extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_adm);
     }
 
-    public void buttonLogin(View view){
+    public void buttonAcessarAdm(View view){
         LoginService service = new LoginService(getBaseContext());
         Login login = new Login();
 
 
-        name = (TextView)findViewById(R.id.nameUser);
-        password = (TextView)findViewById((R.id.passUser));
+        TextView name = (TextView)findViewById(R.id.nameUser);
+        TextView password = (TextView)findViewById((R.id.passUser));
 
         login.setNameUser(name.getText().toString());
         login.setPasswordUser(password.getText().toString());
@@ -39,28 +37,14 @@ public class LoginController extends AppCompatActivity {
             return;
         }
 
-        // Recovering user
         Singleton.getInstance().login = login;
-
         String result = service.login(login);
 
         if(result.isEmpty()){
-
-            if(login.getNameUser().equals(ADMIN)){
-                Intent Menu = new Intent(this, MenuController.class);
-                startActivity(Menu);
-            }
-
-            Intent Menu = new Intent(this, MenuController.class);
-            startActivity(Menu);
-
+            Intent MenuController = new Intent(this, com.example.analista_nota10.Controller.MenuController.class);
+            startActivity(MenuController);
         }else{
             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
         }
-    }
-
-    public void linkCadastrar (View view){
-        Intent CadastroController = new Intent(this, RegisterController.class);
-        startActivity(CadastroController);
     }
 }

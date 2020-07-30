@@ -14,7 +14,7 @@ import com.example.analista_nota10.Service.DisciplineService;
 
 import java.util.List;
 
-public class MenuController extends AppCompatActivity {
+public class MenuAlunoController extends AppCompatActivity {
     private Spinner spnDiscipline;
     private List<Discipline> listDisciplines;
     private DisciplineService service;
@@ -22,11 +22,11 @@ public class MenuController extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_menu_aluno);
 
         // Spinner
 
-        this.spnDiscipline = (Spinner) this.findViewById(R.id.spinnerOptionsMenu);
+        this.spnDiscipline = (Spinner) this.findViewById(R.id.spinnerOpcoesMenuAluno);
 
         this.service = new DisciplineService(getApplicationContext());
         this.listDisciplines = service.listDiscipline();
@@ -42,15 +42,8 @@ public class MenuController extends AppCompatActivity {
 
         // end spinner
     }
-    public void buttonDisciplina (View view){
-        Intent DisciplinaController = new Intent(this, AddDisciplineController.class);
-        startActivity(DisciplinaController);
-    }
-    public void buttonQuestao (View view){
-        Intent QuestaoController = new Intent(this, AddQuestaoController.class);
-        startActivity(QuestaoController);
-    }
-    public void buttonGerarSimulado (View view){
+
+    public void generateSimulated (View view){
         String discipline = spnDiscipline.getSelectedItem().toString();
         Bundle param = new Bundle();
 

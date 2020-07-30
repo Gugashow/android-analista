@@ -16,7 +16,9 @@
         <activity android:name=".Controller.PerformanceController" />
         <activity android:name=".Controller.SimuladoController" />
         <activity android:name=".Controller.MenuController" />
+        <activity android:name=".Controller.MenuAlunoController" />
         <activity android:name=".Controller.RegisterController" />
+        <activity android:name=".Controller.LoginAdmController" />
         <activity android:name=".Controller.LoginController">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

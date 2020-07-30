@@ -36,4 +36,8 @@ public class Discipline {
         this._idUser = _idUser;
         this.nameDiscipline = nameDiscipline;
     }
+
+    public String toString(){
+        return this.getNameDiscipline();
+    }
 }

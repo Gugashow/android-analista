@@ -8,7 +8,7 @@
     tools:context=".Controller.AddQuestaoController">
 
     <EditText
-        android:id="@+id/escreverPergunta"
+        android:id="@+id/question"
         android:layout_width="339dp"
         android:layout_height="122dp"
         android:background="#FFFFFF"
@@ -21,7 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282" />
+        app:layout_constraintVertical_bias="0.295" />
 
     <Spinner
         android:id="@+id/spinnerOpcoes"
@@ -29,13 +29,12 @@
         android:layout_height="46dp"
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
-        android:entries="@array/spinner_opcoes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintVertical_bias="0.143"/>
 
     <TextView
         android:id="@+id/textView5"
@@ -53,6 +52,49 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="300dp"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        tools:context=".Controller.AddQuestaoController">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Add" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/textin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@id/add" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"></LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
     <Button
         android:id="@+id/buttonAddQuestao"
         android:layout_width="wrap_content"
@@ -64,97 +106,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <RadioGroup
-        android:layout_width="337dp"
-        android:layout_height="255dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.787">
-
-        <RadioButton
-            android:id="@+id/radioAlternativaA"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="A" />
-
-        <EditText
-            android:id="@+id/escreverRespostaA"
-            android:layout_width="@dimen/caixaAddRespostaWidth"
-            android:layout_height="@dimen/caixaAddRespostaHeight"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:paddingLeft="@dimen/paddingLeftRight"
-            android:paddingRight="@dimen/paddingLeftRight" />
-
-        <RadioButton
-            android:id="@+id/radioAlternativaB"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="B" />
-
-        <EditText
-            android:id="@+id/escreverRespostaB"
-            android:layout_width="@dimen/caixaAddRespostaWidth"
-            android:layout_height="@dimen/caixaAddRespostaHeight"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:paddingLeft="@dimen/paddingLeftRight"
-            android:paddingRight="@dimen/paddingLeftRight" />
-
-        <RadioButton
-            android:id="@+id/radioAlternativaC"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="C" />
-
-        <EditText
-            android:id="@+id/escreverRespostaC"
-            android:layout_width="@dimen/caixaAddRespostaWidth"
-            android:layout_height="@dimen/caixaAddRespostaHeight"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:paddingLeft="@dimen/paddingLeftRight"
-            android:paddingRight="@dimen/paddingLeftRight" />
-
-        <RadioButton
-            android:id="@+id/radioAlternativaD"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="D" />
-
-        <EditText
-            android:id="@+id/escreverRespostaD"
-            android:layout_width="@dimen/caixaAddRespostaWidth"
-            android:layout_height="@dimen/caixaAddRespostaHeight"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:paddingLeft="@dimen/paddingLeftRight"
-            android:paddingRight="@dimen/paddingLeftRight" />
-
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/buttonEditQuestao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="216dp"
-        android:layout_marginLeft="216dp"
-        android:background="@color/colorButton"
-        android:onClick="buttonEditQuestao"
-        android:text="Editar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.839"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
