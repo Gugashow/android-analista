@@ -52,7 +52,7 @@ public class SimuladoController extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_simulado);
+        setContentView(R.layout.activity_simulated);
 
         Intent intentMenu = getIntent();
 
@@ -219,7 +219,7 @@ public class SimuladoController extends AppCompatActivity {
     public void buttonSair (View view){
 
         if(user.getNameUser().equals(LoginController.ADMIN)){
-            Intent menu = new Intent(this, MenuController.class);
+            Intent menu = new Intent(this, MenuAdmController.class);
             startActivity(menu);
         }
 

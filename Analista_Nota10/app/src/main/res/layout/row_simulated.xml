@@ -6,13 +6,20 @@
     <CheckBox
         android:id="@+id/checkbox"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="48dp" />
 
     <AutoCompleteTextView
         android:id="@+id/textout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="61dp"
-        android:layout_marginRight="16dp"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@+id/checkbox"
+        android:layout_toRightOf="@+id/checkbox"
+        android:background="#FFFFFF"
+        android:paddingLeft="@dimen/paddingLeftRight"
+        android:paddingRight="@dimen/paddingLeftRight"
+        android:textSize="19sp" />
 </RelativeLayout>

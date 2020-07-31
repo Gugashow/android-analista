@@ -10,15 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Controller.EditQuestao"></activity>
-        <activity android:name=".Controller.EditDiscipline" />
         <activity android:name=".Controller.AddQuestaoController" />
         <activity android:name=".Controller.AddDisciplineController" />
         <activity android:name=".Controller.PerformanceController" />
         <activity android:name=".Controller.SimuladoController" />
-        <activity android:name=".Controller.MenuController" />
+        <activity android:name=".Controller.MenuAdmController" />
         <activity android:name=".Controller.MenuAlunoController" />
         <activity android:name=".Controller.RegisterController" />
-        <activity android:name=".Controller.LoginAdmController" />
         <activity android:name=".Controller.LoginController">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -47,20 +47,23 @@ public class LoginController extends AppCompatActivity {
         if(result.isEmpty()){
 
             if(login.getNameUser().equals(ADMIN)){
-                Intent Menu = new Intent(this, MenuController.class);
+                Intent Menu = new Intent(this, MenuAdmController.class);
                 startActivity(Menu);
             }
 
-            Intent Menu = new Intent(this, MenuController.class);
+            Intent Menu = new Intent(this, MenuAlunoController.class);
             startActivity(Menu);
 
         }else{
             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
         }
     }
-
     public void linkCadastrar (View view){
-        Intent CadastroController = new Intent(this, RegisterController.class);
-        startActivity(CadastroController);
+        Intent RegisterController = new Intent(this, RegisterController.class);
+        startActivity(RegisterController);
+    }
+    public void buttonTelaAdm (View view){
+        Intent LoginAdmController = new Intent(this, LoginAdmController.class);
+        startActivity(LoginAdmController);
     }
 }

@@ -1,6 +1,5 @@
 package com.example.analista_nota10;
 
-import com.example.analista_nota10.Controller.LoginController;
 import com.example.analista_nota10.Model.Login;
 
 public class Singleton {

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -24,7 +23,7 @@ public class AddDisciplineController extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_discipline_controller);
+        setContentView(R.layout.activity_add_discipline);
     }
 
     TextView nameDiscipline;
@@ -61,18 +60,8 @@ public class AddDisciplineController extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
         }
     }
-
-    public void buttonAddEditar (View view){
-
-        Spinner spinnerSelectDiscipline = findViewById(R.id.spinnerSelectDiscipline);
-
-        Intent EditDiscipline = new Intent(this, EditDiscipline.class);
-        startActivity(EditDiscipline);
-    }
-
     private void clearComponent() {
         nameDiscipline.setText("");
         nameDiscipline.requestFocus();
     }
-
 }

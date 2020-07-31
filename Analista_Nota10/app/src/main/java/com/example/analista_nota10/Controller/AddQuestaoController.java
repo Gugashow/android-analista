@@ -37,6 +37,7 @@ public class AddQuestaoController extends AppCompatActivity{
     private LinearLayout container;
     private CheckBox checkBox;
     private ArrayAdapter<String> adapter;
+    private EditText editText;
     public static final String SIM = "SIM";
     public static final String NAO = "NAO";
 
@@ -48,7 +49,7 @@ public class AddQuestaoController extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_questao_controller);
+        setContentView(R.layout.activity_add_questao);
 
         // Spinner
 
@@ -168,7 +169,7 @@ public class AddQuestaoController extends AppCompatActivity{
 
     public void buttonAddQuestao(View view){
 
-        EditText editText = (EditText) findViewById(R.id.question);
+        editText = (EditText) findViewById(R.id.question);
         Spinner spinner = (Spinner) findViewById(R.id.spinnerOpcoes);
 
         String question = editText.getText().toString();
@@ -194,15 +195,13 @@ public class AddQuestaoController extends AppCompatActivity{
             Toast.makeText(getApplicationContext(), "Erro ao inserir registro", Toast.LENGTH_LONG).show();
         }else{
             Toast.makeText(getApplicationContext(), "Registro inserido com sucesso", Toast.LENGTH_LONG).show();
-            Intent Menu = new Intent(this, MenuController.class);
-            startActivity(Menu);
+            clearComponent();
+            //Intent RecarregarTela = new Intent(this, AddQuestaoController.class);
+           // startActivity(RecarregarTela);
         }
-
     }
-
-
-    public void buttonEditQuestao (View view){
-        Intent EditQuestao = new Intent(this, EditQuestao.class);
-        startActivity(EditQuestao);
+    private void clearComponent() {
+        container.removeAllViews();
+        editText.setText("");
     }
 }

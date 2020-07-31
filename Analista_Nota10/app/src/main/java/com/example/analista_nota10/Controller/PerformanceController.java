@@ -33,14 +33,13 @@ public class PerformanceController extends AppCompatActivity {
         acertosPerformance.setText("Acertou: " + historico.getCorrectAnswers() + "/" + historico.getQtdQuestions());
     }
     public void buttonPrincipal (View view){
-        Intent Menu = new Intent(this, MenuController.class);
-        startActivity(Menu);
+        Intent MenuAluno = new Intent(this, MenuAlunoController.class);
+        startActivity(MenuAluno);
         onStop();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Toast.makeText(this, "OnStop()", Toast.LENGTH_SHORT).show();
     }
 }

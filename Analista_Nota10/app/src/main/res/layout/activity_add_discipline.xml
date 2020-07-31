@@ -7,6 +7,19 @@
     android:background="#D3D3D3"
     tools:context=".Controller.AddDisciplineController">
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTitulo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36"
+        app:srcCompat="@android:drawable/ic_menu_search" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -25,8 +38,8 @@
 
     <EditText
         android:id="@+id/addDisciplina"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="249dp"
+        android:layout_height="50dp"
         android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
         android:layout_marginEnd="70dp"
@@ -39,32 +52,22 @@
         android:paddingRight="@dimen/paddingLeftRight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/buttonAddDisciplina"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="288dp"
+        android:layout_width="54dp"
+        android:layout_height="31dp"
         android:background="@color/colorButton"
         android:onClick="addDiscipline"
-        android:text="Adicionar"
+        android:text="Add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/buttonAddEditar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorButton"
-        android:onClick="buttonAddEditar"
-        android:text="Editar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.924"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.652" />
+        app:layout_constraintVertical_bias="0.36" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
