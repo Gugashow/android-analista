@@ -34,7 +34,12 @@ public class DisciplineService {
         Long result;
 
         // Checks if table exists
-        onCreate();
+        db = banco.getReadableDatabase();
+
+        if(!banco.tableExists(db, TABELA)){
+            onCreate();
+        }
+        db.close();
 
 
         //Checks if discipline exists
@@ -90,6 +95,15 @@ public class DisciplineService {
     public List<Discipline>  listDiscipline(){
         List<Discipline> listDiscipline = new ArrayList<Discipline>();
         Cursor cursor;
+
+        // Checks if table exists
+        db = banco.getReadableDatabase();
+
+        if(!banco.tableExists(db, TABELA)){
+            onCreate();
+        }
+        db.close();
+
 
         // Reading data in the bank
         db = banco.getReadableDatabase();
