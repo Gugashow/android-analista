@@ -59,4 +59,12 @@ public class MenuAdmController extends AppCompatActivity {
         SimuladoController.putExtras(param);
         startActivity(SimuladoController);
     }
+    public void buttonDeslogarAdm (View view){
+        Intent LoginAdmController = new Intent(this, LoginAdmController.class);
+        startActivity(LoginAdmController);
+        onStop();
+    }
+    protected void onStop() {
+        super.onStop();
+    }
 }

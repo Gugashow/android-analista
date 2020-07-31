@@ -50,7 +50,7 @@ public class RegisterController extends AppCompatActivity {
 
             Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
             if(!resultado.equals("Registro já existe")) {
-                Intent LoginController = new Intent(this, com.example.analista_nota10.Controller.LoginController.class);
+                Intent LoginController = new Intent(this, LoginAlunoController.class);
                 startActivity(LoginController);
             }
     }

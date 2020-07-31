@@ -200,6 +200,10 @@ public class AddQuestaoController extends AppCompatActivity{
            // startActivity(RecarregarTela);
         }
     }
+    public void buttonSairAddQuestao(View view) {
+        Intent MenuAdm = new Intent(this, MenuAdmController.class);
+        startActivity(MenuAdm);
+    }
     private void clearComponent() {
         container.removeAllViews();
         editText.setText("");

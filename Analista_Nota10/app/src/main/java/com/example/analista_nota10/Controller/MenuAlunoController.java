@@ -52,8 +52,8 @@ public class MenuAlunoController extends AppCompatActivity {
         SimuladoController.putExtras(param);
         startActivity(SimuladoController);
     }
-    public void buttonDeslogar (View view){
-        Intent LoginController = new Intent(this, LoginController.class);
+    public void buttonDeslogarAluno (View view){
+        Intent LoginController = new Intent(this, LoginAlunoController.class);
         startActivity(LoginController);
         onStop();
     }

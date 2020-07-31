@@ -1,8 +1,3 @@
 <resources>
     <string name="app_name">Analista@_Nota10</string>
-    <string-array name="spinner_opcoes">
-        <item>Java</item>
-        <item>Kotlin</item>
-        <item>Java Script</item>
-    </string-array>
 </resources>

@@ -9,19 +9,21 @@
 
     <Button
         android:id="@+id/buttonPrincipal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#379F3F"
+        android:layout_width="125dp"
+        android:layout_height="47dp"
+        android:background="@drawable/style_button_cadastro"
         android:onClick="buttonPrincipal"
+        android:paddingBottom="@dimen/paddingBottom"
         android:text="Principal"
         android:textColor="#FFFFFF"
-        android:textStyle="bold"
+        android:textIsSelectable="true"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971" />
+        app:layout_constraintVertical_bias="0.935" />
 
     <ImageView
         android:layout_width="138dp"

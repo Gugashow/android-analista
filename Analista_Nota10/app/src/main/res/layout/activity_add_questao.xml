@@ -29,22 +29,23 @@
         android:layout_height="46dp"
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
+        android:background="@drawable/style_spinner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143"/>
+        app:layout_constraintVertical_bias="0.143" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginRight="156dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginRight="120dp"
         android:layout_marginBottom="111dp"
-        android:text="Questões"
+        android:text="Criar Questões"
         android:textColor="#000000"
         android:textSize="@dimen/sizeTitulo"
         android:textStyle="bold"
@@ -104,14 +105,28 @@
 
     <Button
         android:id="@+id/buttonAddQuestao"
-        android:layout_width="94dp"
-        android:layout_height="31dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="@dimen/buttonGerarPrincipalWidth"
+        android:layout_height="@dimen/buttonGerarPrincipalHeigth"
+        android:layout_marginBottom="12dp"
         android:background="@color/colorButton"
         android:onClick="buttonAddQuestao"
-        android:text="Adicionar"
+        android:text="PRONTO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:layout_width="69dp"
+        android:layout_height="26dp"
+        android:background="@color/colorButton"
+        android:onClick="buttonSairAddQuestao"
+        android:text="SAIR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

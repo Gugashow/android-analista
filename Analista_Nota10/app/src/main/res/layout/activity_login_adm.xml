@@ -20,24 +20,23 @@
         app:srcCompat="@drawable/analistaazul" />
 
     <EditText
-        android:id="@+id/passUser2"
+        android:id="@+id/passAdm"
         android:layout_width="@dimen/caixaWidth"
         android:layout_height="@dimen/caixaHeight"
         android:layout_marginBottom="232dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/style_caixa_texto"
         android:ems="10"
-        android:hint="Digite sua senha"
+        android:hint="Digite sua senha..."
         android:inputType="textPassword"
         android:paddingLeft="@dimen/paddingLeftRight"
         android:paddingRight="@dimen/paddingLeftRight"
-        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorHint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/botaoAcessarId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
@@ -67,16 +66,16 @@
         app:layout_constraintVertical_bias="0.297" />
 
     <EditText
-        android:id="@+id/nameUser2"
+        android:id="@+id/userAdm"
         android:layout_width="@dimen/caixaWidth"
         android:layout_height="@dimen/caixaHeight"
-        android:background="#FFFFFF"
+        android:background="@drawable/style_caixa_texto"
         android:ems="10"
-        android:hint="Digite seu usuário"
+        android:hint="Digite seu usuário..."
         android:inputType="textPersonName"
         android:paddingLeft="@dimen/paddingLeftRight"
         android:paddingRight="@dimen/paddingLeftRight"
-        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorHint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"

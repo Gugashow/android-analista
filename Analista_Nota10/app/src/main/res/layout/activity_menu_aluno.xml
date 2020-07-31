@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EA863C"
     tools:context=".Controller.MenuAlunoController">
 
     <ImageView
@@ -16,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.073"
-        app:srcCompat="@drawable/analistaoriginal" />
+        app:srcCompat="@drawable/icone_simulado" />
 
     <TextView
         android:id="@+id/textView8"
@@ -24,55 +25,58 @@
         android:layout_height="wrap_content"
         android:shadowColor="#000000"
         android:text="Simulado"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="@dimen/sizeTitulo"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297" />
+        app:layout_constraintVertical_bias="0.284" />
 
     <Spinner
         android:id="@+id/spinnerOpcoesMenuAluno"
         android:layout_width="349dp"
         android:layout_height="53dp"
-        android:textSize="150sp"
+        android:background="@drawable/style_spinner"
+        android:paddingLeft="@dimen/paddingLeftRight"
+        android:paddingRight="@dimen/paddingLeftRight"
+        android:textSize="300sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.461" />
 
     <Button
         android:id="@+id/buttonCreateSimulated"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:layout_width="130dp"
+        android:layout_height="67dp"
+        android:background="@drawable/style_button_gerarsimulado"
         android:onClick="generateSimulated"
         android:paddingLeft="@dimen/paddingLeftRight"
         android:paddingRight="@dimen/paddingLeftRight"
+        android:paddingBottom="@dimen/paddingBottom"
         android:text="Gerar Simulado"
-        android:textColor="#000000"
-        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:textIsSelectable="true"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971" />
+        app:layout_constraintVertical_bias="0.937" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="92dp"
-        android:layout_height="32dp"
-        android:background="@color/colorButton"
-        android:onClick="buttonDeslogar"
-        android:text="DESLOGAR"
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="buttonDeslogarAluno"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.028"
+        app:srcCompat="@android:drawable/ic_lock_power_off" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

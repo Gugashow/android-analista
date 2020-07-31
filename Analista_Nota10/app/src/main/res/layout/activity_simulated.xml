@@ -4,45 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6481D5"
+    android:background="#3A52D3"
     tools:context=".Controller.SimuladoController">
 
-
-    <Button
-        android:id="@+id/buttonBeforeSimulado"
-        android:layout_width="108dp"
-        android:layout_height="39dp"
-        android:background="@color/colorButton"
-        android:onClick="buttonBeforeSimulado"
-        android:paddingLeft="@dimen/paddingLeftRight"
-        android:paddingRight="@dimen/paddingLeftRight"
-        android:text="Anterior"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.969" />
-
-    <Button
-        android:id="@+id/buttonAfterSimulado"
-        android:layout_width="102dp"
-        android:layout_height="37dp"
-        android:background="@color/colorButton"
-        android:onClick="buttonAfterSimulado"
-        android:paddingLeft="@dimen/paddingLeftRight"
-        android:paddingRight="@dimen/paddingLeftRight"
-        android:text="Avançar"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971" />
 
     <ImageView
         android:layout_width="138dp"
@@ -72,11 +36,16 @@
         app:layout_constraintVertical_bias="0.286" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="300dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="407dp"
+        android:layout_height="261dp"
         android:orientation="horizontal"
         android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.775"
         tools:context=".Controller.AddQuestaoController">
 
 
@@ -93,20 +62,53 @@
                 android:orientation="vertical"></LinearLayout>
 
         </LinearLayout>
+
     </LinearLayout>
 
     <Button
         android:id="@+id/buttonSair"
-        android:layout_width="@dimen/buttonSairWidth"
-        android:layout_height="@dimen/buttonSairHeight"
-        android:background="@color/colorButton"
+        android:layout_width="54dp"
+        android:layout_height="21dp"
+        android:background="@color/colorPrimaryDark"
         android:onClick="buttonSair"
+        android:paddingBottom="@dimen/paddingBottom"
         android:text="SAIR"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.027" />
+
+    <Button
+        android:id="@+id/buttonAfterSimulado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_button_before_after"
+        android:onClick="buttonAfterSimulado"
+        android:text="avançar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.969" />
+
+    <Button
+        android:id="@+id/buttonBeforeSimulado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_button_before_after"
+        android:onClick="buttonBeforeSimulado"
+        android:text="ANTERIOR"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.971" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

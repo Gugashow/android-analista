@@ -13,14 +13,14 @@ import com.example.analista_nota10.R;
 import com.example.analista_nota10.Service.LoginService;
 import com.example.analista_nota10.Singleton;
 
-public class LoginController extends AppCompatActivity {
+public class LoginAlunoController extends AppCompatActivity {
     public static final String ADMIN = "Admin";
     private TextView name, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_aluno);
     }
 
     public void buttonLogin(View view){

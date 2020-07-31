@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="sizeTitulo">25sp</dimen>
+
     <dimen name="sizePadrao">20sp</dimen>
-    <dimen name="caixaWidth">250dp</dimen>
-    <dimen name="caixaHeight">30dp</dimen>
-    <dimen name="paddingLeftRight">10dp</dimen>
+
+    <dimen name="caixaWidth">300dp</dimen>
+
+    <dimen name="caixaHeight">38dp</dimen>
+
+    <dimen name="paddingLeftRight">20dp</dimen>
+
     <dimen name="caixaAddRespostaWidth">337dp</dimen>
+
     <dimen name="caixaAddRespostaHeight">31dp</dimen>
+
     <dimen name="caixaDePerguntaWidth">339dp</dimen>
+
     <dimen name="caixaDePerguntaHeight">122dp</dimen>
+
     <dimen name="buttonSairWidth">54dp</dimen>
+
     <dimen name="buttonSairHeight">38dp</dimen>
+
+    <dimen name="buttonAcessarHeight">120dp</dimen>
+
+    <dimen name="paddingBottom">5dp</dimen>
+
+    <dimen name="buttonBeforeAfter">60dp</dimen>
+
+    <dimen name="buttonGerarPrincipalWidth">440dp</dimen>
+
+    <dimen name="buttonGerarPrincipalHeigth">45dp</dimen>
 </resources>

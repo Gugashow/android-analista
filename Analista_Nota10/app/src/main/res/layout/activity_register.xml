@@ -11,81 +11,36 @@
         android:id="@+id/passUser"
         android:layout_width="@dimen/caixaWidth"
         android:layout_height="@dimen/caixaHeight"
-        android:layout_marginBottom="232dp"
+        android:layout_marginBottom="244dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
         android:paddingLeft="@dimen/paddingLeftRight"
         android:paddingRight="@dimen/paddingLeftRight"
-        android:textColorHint="@color/colorTitulo"
+        android:textColorHint="@color/colorHint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/confirmpassUser"
-        android:layout_width="@dimen/caixaWidth"
-        android:layout_height="@dimen/caixaHeight"
-        android:layout_marginBottom="176dp"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:hint="Confirmar senha"
-        android:inputType="textPassword"
-        android:paddingLeft="@dimen/paddingLeftRight"
-        android:paddingRight="@dimen/paddingLeftRight"
-        android:textColorHint="@color/colorTitulo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/botaoFinalizarCadastro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorTitulo"
-        android:onClick="createAccount"
-        android:text=">"
-        android:textColor="#FFFFFF"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.818" />
-
-    <ImageView
-        android:layout_width="138dp"
-        android:layout_height="114dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073"
-        app:srcCompat="@drawable/analistaoriginal" />
 
     <EditText
         android:id="@+id/nameUser"
         android:layout_width="@dimen/caixaWidth"
         android:layout_height="@dimen/caixaHeight"
-        android:background="#FFFFFF"
+        android:background="@drawable/style_caixa_texto"
         android:ems="10"
         android:hint="Usuário"
         android:inputType="textPersonName"
         android:paddingLeft="@dimen/paddingLeftRight"
         android:paddingRight="@dimen/paddingLeftRight"
-        android:textColorHint="@color/colorTitulo"
+        android:textColorHint="@color/colorHint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.401" />
+        app:layout_constraintVertical_bias="0.385" />
 
     <TextView
         android:id="@+id/textView2"
@@ -100,24 +55,71 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.295" />
+        app:layout_constraintVertical_bias="0.274" />
+
+    <Button
+        android:id="@+id/botaoFinalizarCadastro"
+        android:layout_width="113dp"
+        android:layout_height="52dp"
+        android:background="@drawable/style_button_cadastro"
+        android:onClick="createAccount"
+        android:paddingLeft="@dimen/paddingLeftRight"
+        android:paddingRight="@dimen/paddingLeftRight"
+        android:paddingBottom="@dimen/paddingBottom"
+        android:text=">"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.794" />
+
+    <ImageView
+        android:layout_width="138dp"
+        android:layout_height="114dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.049"
+        app:srcCompat="@drawable/analistaoriginal" />
 
     <EditText
         android:id="@+id/emailUser"
         android:layout_width="@dimen/caixaWidth"
         android:layout_height="@dimen/caixaHeight"
-        android:background="#FFFFFF"
+        android:background="@drawable/style_caixa_texto"
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
         android:paddingLeft="@dimen/paddingLeftRight"
         android:paddingRight="@dimen/paddingLeftRight"
-        android:textColorHint="@color/colorTitulo"
+        android:textColorHint="@color/colorHint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.477" />
+
+    <EditText
+        android:id="@+id/confirmpassUser"
+        android:layout_width="@dimen/caixaWidth"
+        android:layout_height="@dimen/caixaHeight"
+        android:layout_marginBottom="188dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="Confirmar senha"
+        android:inputType="textPassword"
+        android:paddingLeft="@dimen/paddingLeftRight"
+        android:paddingRight="@dimen/paddingLeftRight"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
