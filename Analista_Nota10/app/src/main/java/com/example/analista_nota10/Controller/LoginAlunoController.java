@@ -45,15 +45,8 @@ public class LoginAlunoController extends AppCompatActivity {
         String result = service.login(login);
 
         if(result.isEmpty()){
-
-            if(login.getNameUser().equals(ADMIN)){
-                Intent Menu = new Intent(this, MenuAdmController.class);
-                startActivity(Menu);
-            }
-
             Intent Menu = new Intent(this, MenuAlunoController.class);
             startActivity(Menu);
-
         }else{
             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
         }

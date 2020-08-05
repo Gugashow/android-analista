@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="Remover" />
+
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="87dp"
+        android:text="Editar" />
+
+    <AutoCompleteTextView
+        android:id="@+id/textout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@+id/checkbox"
+        android:layout_toRightOf="@+id/checkbox"
+        android:background="#FFFFFF"
+        android:paddingLeft="@dimen/paddingLeftRight"
+        android:paddingRight="@dimen/paddingLeftRight"
+        android:textSize="19sp" />
+</RelativeLayout>

@@ -3,11 +3,14 @@ package com.example.analista_nota10.Controller;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Spinner;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +21,27 @@ import com.example.analista_nota10.Service.DisciplineService;
 import com.example.analista_nota10.Service.RegisterService;
 import com.example.analista_nota10.Singleton;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AddDisciplineController extends AppCompatActivity {
+    private List<Discipline> diciplineList = new ArrayList<>();
+    private DisciplineService disciplineService;
+    private String oldName;
+
+    // Components
+    private ArrayAdapter<String> adapter;
+    private View addView;
+    private Button buttonEdit;
+    private Button buttonRemove;
+    private LinearLayout container;
+    private TextView nameDiscipline;
+    private AutoCompleteTextView textOut;
+    private static final String[] NUMBER = new String[] {
+            "One", "Two", "Three", "Four", "Five",
+            "Six", "Seven", "Eight", "Nine", "Ten"
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +49,12 @@ public class AddDisciplineController extends AppCompatActivity {
         setContentView(R.layout.activity_add_discipline);
     }
 
-    TextView nameDiscipline;
-
     public void addDiscipline(View view) {
         DisciplineService service = new DisciplineService(getBaseContext());
         RegisterService serviceUser = new RegisterService(getBaseContext());
 
 
-        nameDiscipline = (TextView) findViewById(R.id.addDisciplina);
+        nameDiscipline = (TextView) findViewById(R.id.nameDiscipline);
 
         if (nameDiscipline.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Preencha o campo", Toast.LENGTH_LONG).show();
@@ -64,4 +85,146 @@ public class AddDisciplineController extends AppCompatActivity {
         nameDiscipline.setText("");
         nameDiscipline.requestFocus();
     }
+
+    public void onSearchDicipline(View view){
+        Discipline dicipline = new Discipline();
+
+        nameDiscipline = findViewById(R.id.nameDiscipline);
+
+
+        disciplineService = new DisciplineService(getApplicationContext());
+
+
+        if(!nameDiscipline.getText().toString().isEmpty()) {
+            dicipline = disciplineService.getDisciplineByName(nameDiscipline.getText().toString());
+
+            if(dicipline != null) {
+                adapter = new ArrayAdapter<String>(this,
+                        android.R.layout.simple_dropdown_item_1line, NUMBER);
+
+                container = (LinearLayout) findViewById(R.id.container);
+                container.removeAllViews();
+
+                LayoutInflater layoutInflater =
+                        (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                addView = layoutInflater.inflate(R.layout.row_action, null);
+                textOut = (AutoCompleteTextView) addView.findViewById(R.id.textout);
+                textOut.setAdapter(adapter);
+                textOut.setText(dicipline.getNameDiscipline());
+                textOut.setEnabled(false);
+
+                buttonRemove = (Button) addView.findViewById(R.id.remove);
+                buttonEdit = (Button) addView.findViewById(R.id.edit);
+
+                final View.OnClickListener thisListenerRemove = new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ((LinearLayout) addView.getParent()).removeView(addView);
+                        AutoCompleteTextView textOut = (AutoCompleteTextView) addView.findViewById(R.id.textout);
+                        if (disciplineService.removeDisciplineByName(textOut.getText().toString())) {
+                            Toast.makeText(getBaseContext(), "Disciplina removida com sucesso", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getBaseContext(), "Erro ao remover disciplina", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                };
+
+                final View.OnClickListener thisListenerEdit = new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        AutoCompleteTextView textOut = (AutoCompleteTextView) addView.findViewById(R.id.textout);
+
+                        if(buttonEdit.getText().equals("Editar")) {
+                            oldName = textOut.getText().toString();
+                            buttonEdit.setText("Salvar");
+                            textOut.setEnabled(true);
+                        }else {
+                            if(disciplineService.updateDisciplineByName(textOut.getText().toString(), oldName)) {
+                                Toast.makeText(getBaseContext(), "Disciplina atualizada com sucesso", Toast.LENGTH_SHORT).show();
+                                buttonEdit.setText("Editar");
+                                textOut.setEnabled(false);
+                                return;
+                            }
+                            Toast.makeText(getBaseContext(), "Erro ao atualizar a disciplina", Toast.LENGTH_SHORT).show();
+                            buttonEdit.setText("Editar");
+                        }
+
+                    }
+                };
+
+
+                buttonRemove.setOnClickListener(thisListenerRemove);
+                buttonEdit.setOnClickListener(thisListenerEdit);
+                container.addView(addView);
+
+            }
+
+        }else {
+            diciplineList = disciplineService.listDiscipline();
+
+            if (diciplineList.size() >= 1) {
+                adapter = new ArrayAdapter<String>(this,
+                        android.R.layout.simple_dropdown_item_1line, NUMBER);
+
+                container = (LinearLayout) findViewById(R.id.container);
+                container.removeAllViews();
+
+                for (Discipline discipline : diciplineList) {
+                    LayoutInflater layoutInflater =
+                            (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    final View addView = layoutInflater.inflate(R.layout.row_action, null);
+                    AutoCompleteTextView textOut = (AutoCompleteTextView) addView.findViewById(R.id.textout);
+                    textOut.setAdapter(adapter);
+                    textOut.setText(discipline.getNameDiscipline());
+                    textOut.setEnabled(false);
+                    buttonRemove = (Button) addView.findViewById(R.id.remove);
+                    buttonEdit = (Button) addView.findViewById(R.id.edit);
+
+                    final View.OnClickListener thisListenerRemove = new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            ((LinearLayout) addView.getParent()).removeView(addView);
+                            AutoCompleteTextView textOut = (AutoCompleteTextView) addView.findViewById(R.id.textout);
+                            if (disciplineService.removeDisciplineByName(textOut.getText().toString())) {
+                                Toast.makeText(getBaseContext(), "Disciplina removida com sucesso", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getBaseContext(), "Erro ao remover disciplina", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    };
+
+                    final View.OnClickListener thisListenerEdit = new View.OnClickListener(){
+                        @Override
+                        public void onClick(View v) {
+                            AutoCompleteTextView textOut = (AutoCompleteTextView) addView.findViewById(R.id.textout);
+                            buttonEdit = (Button) addView.findViewById(R.id.edit);
+                            if(buttonEdit.getText().equals("Editar")) {
+                                oldName = textOut.getText().toString();
+                                buttonEdit.setText("Salvar");
+                                textOut.setEnabled(true);
+                            }else {
+                                if(disciplineService.updateDisciplineByName(textOut.getText().toString(), oldName)) {
+                                    Toast.makeText(getBaseContext(), "Disciplina atualizada com sucesso", Toast.LENGTH_SHORT).show();
+                                    buttonEdit.setText("Editar");
+                                    textOut.setEnabled(false);
+                                    return;
+                                }
+                                Toast.makeText(getBaseContext(), "Erro ao atualizar a disciplina", Toast.LENGTH_SHORT).show();
+                                buttonEdit.setText("Editar");
+                            }
+
+                        }
+                    };
+
+
+                    buttonRemove.setOnClickListener(thisListenerRemove);
+                    buttonEdit.setOnClickListener(thisListenerEdit);
+                    container.addView(addView);
+                }
+            }
+        }
+    }
+
 }

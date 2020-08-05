@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.analista_nota10.Model.Login;
 import com.example.analista_nota10.R;
+import com.example.analista_nota10.Service.LoginService;
+import com.example.analista_nota10.Singleton;
 
 public class LoginAdmController extends AppCompatActivity {
 
@@ -23,14 +26,33 @@ public class LoginAdmController extends AppCompatActivity {
         setContentView(R.layout.activity_login_adm);
     }
     public void buttonAcessarAdm (View view) {
+        LoginService service = new LoginService(getBaseContext());
+        Login login = new Login();
+
         nameUserAdm = (EditText) findViewById(R.id.userAdm);
         passUserAdm = (EditText) findViewById(R.id.passAdm);
 
-        if (nameUserAdm.getText().toString().equals(ADMIN) && passUserAdm.getText().toString().equals(ADMIN)){
-            Intent MenuAdm = new Intent(this, MenuAdmController.class);
-            startActivity(MenuAdm);
+        login.setNameUser(nameUserAdm.getText().toString());
+        login.setPasswordUser(passUserAdm.getText().toString());
+
+        if(login.getNameUser().isEmpty() || login.getPasswordUser().isEmpty()){
+            Toast.makeText(getApplicationContext(), "Preencha ambos os campos", Toast.LENGTH_LONG).show();
+            return;
         }
-        else
-            Toast.makeText(this,"Você não é administrador", Toast.LENGTH_LONG).show();
+
+        // Recovering user
+        Singleton.getInstance().login = login;
+
+        String result = service.login(login);
+
+        if(result.isEmpty()){
+
+            if(login.getNameUser().equals(ADMIN)){
+                Intent Menu = new Intent(this, MenuAdmController.class);
+                startActivity(Menu);
+            }
+        }else {
+            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        }
     }
 }

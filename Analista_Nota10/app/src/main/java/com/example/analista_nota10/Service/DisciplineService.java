@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 
 import com.example.analista_nota10.DataBase.Banco;
 import com.example.analista_nota10.Model.Discipline;
@@ -128,7 +129,8 @@ public class DisciplineService {
 
     /**
      * Get discipline
-     * @return discipline
+     * @param name
+     * @return
      */
     public Discipline  getDisciplineByName(String name){
         Cursor cursor;
@@ -156,6 +158,46 @@ public class DisciplineService {
 
         db.close();
         return null;
+    }
+
+    /**
+     * Remove discipline
+     * @param name
+     * @return true (success) | false (error)
+     */
+    public boolean removeDisciplineByName(String name){
+        boolean result;
+
+        // Reading data in the bank
+        db = banco.getWritableDatabase();
+        result = db.delete(TABELA, NOME_DISCIPLINA + " = ?", new String[] {name}) > 0;
+
+        db.close();
+        return result;
+    }
+
+    /**
+     * Update discipline
+     * @param newName
+     * @param oldName
+     */
+    public boolean updateDisciplineByName(String newName,  String oldName ){
+        boolean result;
+
+        try {
+            // Reading and writing data in the bank
+            db = banco.getWritableDatabase();
+
+            db.execSQL("UPDATE "+TABELA+" SET "+NOME_DISCIPLINA+ " = "+"'"+newName+"' "+ "WHERE " +NOME_DISCIPLINA+ " = "+"'"+oldName+"'");
+
+            result = true;
+        }catch (SQLiteException e){
+            e.getStackTrace();
+            result = false;
+        }
+
+        db.close();
+        return result;
     }
 
 
