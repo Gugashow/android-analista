@@ -9,10 +9,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.analista_nota10.Model.Historico;
+import com.example.analista_nota10.Model.Login;
 import com.example.analista_nota10.R;
+import com.example.analista_nota10.Singleton;
 
 public class PerformanceController extends AppCompatActivity {
 
+    private Login user = Singleton.getInstance().login;
     private TextView porcentagemPerformance, acertosPerformance;
 
     @Override
@@ -33,13 +36,22 @@ public class PerformanceController extends AppCompatActivity {
         acertosPerformance.setText("Acertou: " + historico.getCorrectAnswers() + "/" + historico.getQtdQuestions());
     }
     public void buttonPrincipal (View view){
-        Intent MenuAluno = new Intent(this, MenuAlunoController.class);
-        startActivity(MenuAluno);
-        onStop();
+
+        if(user.getNameUser().equals(LoginAdmController.ADMIN)){
+            Intent Menu = new Intent(this, MenuAdmController.class);
+            startActivity(Menu);
+        }else {
+            Intent MenuAluno = new Intent(this, MenuAlunoController.class);
+            startActivity(MenuAluno);
+            onStop();
+        }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
     }
+
+    @Override
+    public void onBackPressed() { }
 }

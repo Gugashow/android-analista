@@ -218,9 +218,7 @@ public class SimuladoController extends AppCompatActivity {
 
     public void buttonSair (View view){
 
-        //concertar..
-
-        if(user.getNameUser().equals(LoginAlunoController.ADMIN)){
+        if(user.getNameUser().equals(LoginAdmController.ADMIN)){
             Intent menu = new Intent(this, MenuAdmController.class);
             startActivity(menu);
         }

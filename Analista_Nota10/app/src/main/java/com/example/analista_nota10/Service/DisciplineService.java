@@ -28,7 +28,7 @@ public class DisciplineService {
     /**
      * Creating a discipline
      * @param discipline
-     * @return message
+     * @return msg
      */
     public String createDiscipline(Discipline discipline, Login login) {
         ContentValues values;

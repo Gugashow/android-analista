@@ -28,6 +28,8 @@ public class AddDisciplineController extends AppCompatActivity {
     private List<Discipline> diciplineList = new ArrayList<>();
     private DisciplineService disciplineService;
     private String oldName;
+    private String EDITAR = "Editar";
+    private String SALVAR = "Salvar";
 
     // Components
     private ArrayAdapter<String> adapter;
@@ -74,7 +76,7 @@ public class AddDisciplineController extends AppCompatActivity {
             // Cleaning field
             clearComponent();
 
-            // Abrir o teclado
+            // Opening keyBoard
             ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE))
                     .showSoftInput(nameDiscipline, 0);
             
@@ -135,19 +137,19 @@ public class AddDisciplineController extends AppCompatActivity {
                     public void onClick(View v) {
                         AutoCompleteTextView textOut = (AutoCompleteTextView) addView.findViewById(R.id.textout);
 
-                        if(buttonEdit.getText().equals("Editar")) {
+                        if(buttonEdit.getText().equals(EDITAR)) {
                             oldName = textOut.getText().toString();
-                            buttonEdit.setText("Salvar");
+                            buttonEdit.setText(SALVAR);
                             textOut.setEnabled(true);
                         }else {
                             if(disciplineService.updateDisciplineByName(textOut.getText().toString(), oldName)) {
                                 Toast.makeText(getBaseContext(), "Disciplina atualizada com sucesso", Toast.LENGTH_SHORT).show();
-                                buttonEdit.setText("Editar");
+                                buttonEdit.setText(EDITAR);
                                 textOut.setEnabled(false);
                                 return;
                             }
                             Toast.makeText(getBaseContext(), "Erro ao atualizar a disciplina", Toast.LENGTH_SHORT).show();
-                            buttonEdit.setText("Editar");
+                            buttonEdit.setText(EDITAR);
                         }
 
                     }
@@ -158,6 +160,8 @@ public class AddDisciplineController extends AppCompatActivity {
                 buttonEdit.setOnClickListener(thisListenerEdit);
                 container.addView(addView);
 
+            }else{
+                Toast.makeText(getBaseContext(), "Registro não encontrado", Toast.LENGTH_SHORT).show();
             }
 
         }else {
@@ -200,19 +204,19 @@ public class AddDisciplineController extends AppCompatActivity {
                         public void onClick(View v) {
                             AutoCompleteTextView textOut = (AutoCompleteTextView) addView.findViewById(R.id.textout);
                             buttonEdit = (Button) addView.findViewById(R.id.edit);
-                            if(buttonEdit.getText().equals("Editar")) {
+                            if(buttonEdit.getText().equals(EDITAR)) {
                                 oldName = textOut.getText().toString();
-                                buttonEdit.setText("Salvar");
+                                buttonEdit.setText(SALVAR);
                                 textOut.setEnabled(true);
                             }else {
                                 if(disciplineService.updateDisciplineByName(textOut.getText().toString(), oldName)) {
                                     Toast.makeText(getBaseContext(), "Disciplina atualizada com sucesso", Toast.LENGTH_SHORT).show();
-                                    buttonEdit.setText("Editar");
+                                    buttonEdit.setText(EDITAR);
                                     textOut.setEnabled(false);
                                     return;
                                 }
                                 Toast.makeText(getBaseContext(), "Erro ao atualizar a disciplina", Toast.LENGTH_SHORT).show();
-                                buttonEdit.setText("Editar");
+                                buttonEdit.setText(EDITAR);
                             }
 
                         }

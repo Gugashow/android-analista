@@ -5,12 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.analista_nota10.Model.Discipline;
 import com.example.analista_nota10.R;
 import com.example.analista_nota10.Service.DisciplineService;
+import com.example.analista_nota10.Service.QuestionsService;
 
 import java.util.List;
 
@@ -40,7 +44,34 @@ public class MenuAdmController extends AppCompatActivity {
 
         this.spnDiscipline.setAdapter(spnDisciplineAdapter);
 
+        this.spnDiscipline.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+
+                // Check questions
+                QuestionsService questionsService = new QuestionsService(getApplicationContext());
+                Button simulated = (Button) findViewById(R.id.buttonCreateSimulated);
+                simulated.setEnabled(true);
+
+                for (Discipline discipline : listDisciplines) {
+                    if (discipline.getNameDiscipline().equals(spnDiscipline.getSelectedItem().toString())) {
+                        if (questionsService.getQuestionByIdDicipline(discipline.get_id()).size() < 1) {
+                            simulated.setEnabled(false);
+                            Toast.makeText(MenuAdmController.this, "Sem questões para essa disciplina", Toast.LENGTH_SHORT).show();
+                            break;
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         // end spinner
+
     }
     public void buttonDisciplina (View view){
         Intent DisciplinaController = new Intent(this, AddDisciplineController.class);

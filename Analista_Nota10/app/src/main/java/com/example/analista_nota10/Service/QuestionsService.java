@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 
 import com.example.analista_nota10.DataBase.Banco;
 import com.example.analista_nota10.Model.Discipline;
@@ -157,5 +158,45 @@ public class QuestionsService {
 
         db.close();
         return questionsList;
+    }
+
+    /**
+     * Remove question
+     * @param name
+     * @return true (success) | false (error)
+     */
+    public boolean removeQuestionByName(String name){
+        boolean result;
+
+        // Reading data in the bank
+        db = banco.getWritableDatabase();
+        result = db.delete(TABELA, QUESTOES + " = ?", new String[] {name}) > 0;
+
+        db.close();
+        return result;
+    }
+
+    /**
+     * Update question
+     * @param newName
+     * @param oldName
+     */
+    public boolean updateQuestionByName(String newName,  String oldName ){
+        boolean result;
+
+        try {
+            // Reading and writing data in the bank
+            db = banco.getWritableDatabase();
+
+            db.execSQL("UPDATE "+TABELA+" SET "+QUESTOES+ " = "+"'"+newName+"' "+ "WHERE " +QUESTOES+ " = "+"'"+oldName+"'");
+
+            result = true;
+        }catch (SQLiteException e){
+            e.getStackTrace();
+            result = false;
+        }
+
+        db.close();
+        return result;
     }
 }

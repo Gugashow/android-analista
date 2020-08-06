@@ -14,7 +14,6 @@ import com.example.analista_nota10.Service.LoginService;
 import com.example.analista_nota10.Singleton;
 
 public class LoginAdmController extends AppCompatActivity {
-
     public static final String ADMIN = "admin";
     private EditText nameUserAdm;
     private EditText passUserAdm;

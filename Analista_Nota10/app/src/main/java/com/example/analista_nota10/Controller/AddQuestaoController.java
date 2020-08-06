@@ -116,11 +116,10 @@ public class AddQuestaoController extends AppCompatActivity{
 
                         AutoCompleteTextView textOut = (AutoCompleteTextView)addView.findViewById(R.id.textout);
                         checkBox = (CheckBox)addView.findViewById(R.id.checkbox);
-                        String text = textOut.getText().toString();
-                        String text1 = v.toString();
 
                         if (checkBox.isChecked()){
                             Toast.makeText(getBaseContext(), "Alternativa correta", Toast.LENGTH_LONG).show();
+
                         }
 
 
@@ -168,36 +167,48 @@ public class AddQuestaoController extends AppCompatActivity{
     }
 
     public void buttonAddQuestao(View view){
+        boolean checkAnswer = false;
 
-        editText = (EditText) findViewById(R.id.question);
-        Spinner spinner = (Spinner) findViewById(R.id.spinnerOpcoes);
+        // Check qtd answers
+        for(Alternative alternative : alternativeList){
+            if(alternative.getResposta().equals(AddQuestaoController.SIM)){
+                checkAnswer = true;
+                break;
+            }
+        }
 
-        String question = editText.getText().toString();
-        String nameDisc = spinner.getSelectedItem().toString();
+        if(checkAnswer) {
+            editText = (EditText) findViewById(R.id.question);
+            Spinner spinner = (Spinner) findViewById(R.id.spinnerOpcoes);
 
-        // Recovering discipline
-        DisciplineService serviceDisc = new DisciplineService(getApplicationContext());
-        Discipline discipline = serviceDisc.getDisciplineByName(nameDisc);
+            String question = editText.getText().toString();
+            String nameDisc = spinner.getSelectedItem().toString();
 
-        // Building object
-        Questions questions = new Questions(
-                question,
-                discipline.get_id()
-        );
+            // Recovering discipline
+            DisciplineService serviceDisc = new DisciplineService(getApplicationContext());
+            Discipline discipline = serviceDisc.getDisciplineByName(nameDisc);
 
-        QuestionsService service = new QuestionsService(getApplicationContext());
-        Long idQuestion = service.createQuestion(questions);
+            // Building object
+            Questions questions = new Questions(
+                    question,
+                    discipline.get_id()
+            );
 
-        AlternativeService alternativeService = new AlternativeService(getApplicationContext());
-        Long idAlternativa = alternativeService.createAlternative(alternativeList, idQuestion);
+            QuestionsService service = new QuestionsService(getApplicationContext());
+            Long idQuestion = service.createQuestion(questions);
 
-        if(idQuestion == -1 || idAlternativa == -1 || idAlternativa == -2){
-            Toast.makeText(getApplicationContext(), "Erro ao inserir registro", Toast.LENGTH_LONG).show();
-        }else{
-            Toast.makeText(getApplicationContext(), "Registro inserido com sucesso", Toast.LENGTH_LONG).show();
+            AlternativeService alternativeService = new AlternativeService(getApplicationContext());
+            Long idAlternativa = alternativeService.createAlternative(alternativeList, idQuestion);
+
+            if (idQuestion == -1 || idAlternativa == -1 || idAlternativa == -2) {
+                Toast.makeText(getApplicationContext(), "Erro ao inserir registro", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Registro inserido com sucesso", Toast.LENGTH_LONG).show();
+            }
             clearComponent();
-            //Intent RecarregarTela = new Intent(this, AddQuestaoController.class);
-           // startActivity(RecarregarTela);
+
+        }else{
+            Toast.makeText(getApplicationContext(), "Informe uma alternativa correta", Toast.LENGTH_LONG).show();
         }
     }
     public void buttonSairAddQuestao(View view) {
@@ -207,5 +218,6 @@ public class AddQuestaoController extends AppCompatActivity{
     private void clearComponent() {
         container.removeAllViews();
         editText.setText("");
+        alternativeList = new ArrayList<>();
     }
 }
