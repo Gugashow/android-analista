@@ -59,7 +59,7 @@ public class AddDisciplineController extends AppCompatActivity {
         nameDiscipline = (TextView) findViewById(R.id.nameDiscipline);
 
         if (nameDiscipline.getText().toString().isEmpty()) {
-            Toast.makeText(getApplicationContext(), "Preencha o campo", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Preencha o nome da disciplina", Toast.LENGTH_LONG).show();
         } else {
 
             Discipline discipline = new Discipline();
@@ -96,6 +96,10 @@ public class AddDisciplineController extends AppCompatActivity {
 
         disciplineService = new DisciplineService(getApplicationContext());
 
+        container = (LinearLayout) findViewById(R.id.container);
+
+        if(container != null) container.removeAllViews();
+
 
         if(!nameDiscipline.getText().toString().isEmpty()) {
             dicipline = disciplineService.getDisciplineByName(nameDiscipline.getText().toString());
@@ -103,9 +107,6 @@ public class AddDisciplineController extends AppCompatActivity {
             if(dicipline != null) {
                 adapter = new ArrayAdapter<String>(this,
                         android.R.layout.simple_dropdown_item_1line, NUMBER);
-
-                container = (LinearLayout) findViewById(R.id.container);
-                container.removeAllViews();
 
                 LayoutInflater layoutInflater =
                         (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);

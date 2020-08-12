@@ -69,6 +69,7 @@ public class EditQuestao extends AppCompatActivity {
     }
 
     public void onSearchQuestion(View view) {
+
         questionsService = new QuestionsService(getApplicationContext());
         List<Questions> questionsList = new ArrayList<>();
 
@@ -79,8 +80,11 @@ public class EditQuestao extends AppCompatActivity {
             }
         }
 
-
         LinearLayout container = (LinearLayout) findViewById(R.id.container);
+
+        if(container != null) {
+            container.removeAllViews();
+        }
 
         if(questionsList.size() >= 1){
             loadingQuestions(questionsList, container);
