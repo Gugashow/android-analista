@@ -82,6 +82,13 @@ public class MenuAdmController extends AppCompatActivity {
         startActivity(EditQuestao);
     }
     public void buttonGerarSimulado (View view){
+
+        // Check disciplines
+        if(listDisciplines.size() < 1) {
+            Toast.makeText(getApplicationContext(), "Cadastre uma disciplina", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String discipline = spnDiscipline.getSelectedItem().toString();
         Bundle param = new Bundle();
 

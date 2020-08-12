@@ -70,6 +70,12 @@ public class EditQuestao extends AppCompatActivity {
 
     public void onSearchQuestion(View view) {
 
+        // Check disciplines
+        if(listDisciplines.size() < 1) {
+            Toast.makeText(getApplicationContext(), "Selecione uma disciplina", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         questionsService = new QuestionsService(getApplicationContext());
         List<Questions> questionsList = new ArrayList<>();
 

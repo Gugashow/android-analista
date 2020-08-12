@@ -3,6 +3,7 @@ package com.example.analista_nota10.Controller;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -228,8 +229,19 @@ public class AddDisciplineController extends AppCompatActivity {
                     buttonEdit.setOnClickListener(thisListenerEdit);
                     container.addView(addView);
                 }
+            }else{
+                Toast.makeText(getBaseContext(), "Sem disciplina cadastrada", Toast.LENGTH_SHORT).show();
+                return;
             }
         }
     }
 
+    // Adicionar o botao na tela de disciplina
+    public void buttonExit(View view) {
+        Intent MenuAdm = new Intent(this, MenuAdmController.class);
+        startActivity(MenuAdm);
+    }
+
+    @Override
+    public void onBackPressed() { }
 }

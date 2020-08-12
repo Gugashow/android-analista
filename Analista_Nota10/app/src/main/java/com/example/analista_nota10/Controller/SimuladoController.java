@@ -221,6 +221,7 @@ public class SimuladoController extends AppCompatActivity {
         if(user.getNameUser().equals(LoginAdmController.ADMIN)){
             Intent menu = new Intent(this, MenuAdmController.class);
             startActivity(menu);
+            return;
         }
         Intent menuAluno = new Intent(this, MenuAlunoController.class);
         startActivity(menuAluno);

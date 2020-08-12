@@ -29,6 +29,10 @@ public class MenuAlunoController extends AppCompatActivity {
         setContentView(R.layout.activity_menu_aluno);
 
         // Spinner
+        loadingSpinner();
+    }
+
+    private void loadingSpinner() {
 
         this.spnDiscipline = (Spinner) this.findViewById(R.id.spinnerOpcoesMenuAluno);
 
@@ -51,6 +55,7 @@ public class MenuAlunoController extends AppCompatActivity {
                 // Check questions
                 QuestionsService questionsService = new QuestionsService(getApplicationContext());
                 Button simulated = (Button) findViewById(R.id.buttonCreateSimulated);
+                simulated.setEnabled(true);
 
                 for (Discipline discipline : listDisciplines) {
                     if (discipline.getNameDiscipline().equals(spnDiscipline.getSelectedItem().toString())) {
@@ -69,10 +74,16 @@ public class MenuAlunoController extends AppCompatActivity {
             }
         });
 
-        // end spinner
     }
 
     public void generateSimulated (View view){
+
+        // Check disciplines
+        if(listDisciplines.size() < 1) {
+            Toast.makeText(getApplicationContext(), "Cadastre uma disciplina", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String discipline = spnDiscipline.getSelectedItem().toString();
         Bundle param = new Bundle();
 
@@ -86,4 +97,5 @@ public class MenuAlunoController extends AppCompatActivity {
         startActivity(LoginController);
         onStop();
     }
+
 }
