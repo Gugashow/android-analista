@@ -96,7 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:shadowColor="#000000"
-        android:text="Perdil do administrador"
+        android:text="Perfil do administrador"
         android:textColor="#FFEB3B"
         android:textSize="@dimen/sizeTitulo"
         android:textStyle="bold"

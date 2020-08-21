@@ -113,8 +113,8 @@ public class MenuAdmController extends AppCompatActivity {
         startActivity(SimuladoController);
     }
     public void buttonDeslogarAdm (View view){
-        Intent LoginAdmController = new Intent(this, LoginAdmController.class);
-        startActivity(LoginAdmController);
+        Intent LoginAlunoController = new Intent(this, LoginAlunoController.class);
+        startActivity(LoginAlunoController);
         onStop();
     }
     protected void onStop() {
