@@ -236,7 +236,6 @@ public class AddDisciplineController extends AppCompatActivity {
         }
     }
 
-    // Adicionar o botao na tela de disciplina
     public void buttonVoltar(View view) {
         Intent MenuAdm = new Intent(this, MenuAdmController.class);
         startActivity(MenuAdm);

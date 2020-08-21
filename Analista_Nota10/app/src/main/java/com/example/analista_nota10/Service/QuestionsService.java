@@ -139,7 +139,12 @@ public class QuestionsService {
     public List<Questions> getQuestionByIdDicipline(int idDiscipline){
         List<Questions> questionsList = new ArrayList<>();
         Cursor cursor;
+
         db = banco.getReadableDatabase();
+
+        if(!banco.tableExists(db, TABELA)){
+            onCreate();
+        }
 
         cursor = db.rawQuery("SELECT * FROM "+TABELA+ " WHERE "+ID_DISCIPLINA+" = "+idDiscipline, null);
 

@@ -72,7 +72,7 @@ public class EditQuestao extends AppCompatActivity {
 
         // Check disciplines
         if(listDisciplines.size() < 1) {
-            Toast.makeText(getApplicationContext(), "Selecione uma disciplina", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Cadastre uma disciplina", Toast.LENGTH_SHORT).show();
             return;
         }
 
